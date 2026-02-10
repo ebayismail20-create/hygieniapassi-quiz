@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hygieniapassi Practice Test | Finnish Hygiene Passport Quiz</title>
+    <meta name="description"
+        content="Practice for the Finnish Hygiene Passport (Hygieniapassi) exam with 100+ true/false questions covering all 7 exam topics.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="app">
+        <!-- LANDING PAGE -->
+        <div id="landing" class="screen active">
+            <div class="hero">
+                <div class="hero-badge">🧑‍🍳 Hygieniapassi</div>
+                <h1>Hygiene Passport<br><span class="gradient-text">Practice Test</span></h1>
+                <p class="hero-subtitle">Master all 7 exam topics with <strong id="countdown-days">100+
+                        questions</strong> — including official Ruokavirasto questions!</p>
+
+                <div class="exam-info-card">
+                    <div class="exam-info-row">
+                        <span class="info-icon">✅</span>
+                        <div>
+                            <span class="info-label">Pass Requirement</span>
+                            <span class="info-value">34/40 correct (85%)</span>
+                        </div>
+                    </div>
+                    <div class="exam-info-row">
+                        <span class="info-icon">⏱️</span>
+                        <div>
+                            <span class="info-label">Time Limit</span>
+                            <span class="info-value">45 minutes (min 20 min)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mode-selector">
+                    <h3>Choose Study Mode</h3>
+                    <div class="mode-cards">
+                        <button class="mode-card" onclick="startQuiz('practice')">
+                            <div class="mode-emoji">📖</div>
+                            <div class="mode-title">Practice Mode</div>
+                            <div class="mode-desc">See answers after each question. Study by category.</div>
+                        </button>
+                        <button class="mode-card" onclick="startQuiz('exam')">
+                            <div class="mode-emoji">🎯</div>
+                            <div class="mode-title">Exam Simulation</div>
+                            <div class="mode-desc">40 random questions, 45 min timer. Just like the real test!</div>
+                        </button>
+                        <button class="mode-card" onclick="showStudyGuide()">
+                            <div class="mode-emoji">📚</div>
+                            <div class="mode-title">Study Guide</div>
+                            <div class="mode-desc">Key facts and concepts for each topic area.</div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Category filter for practice mode -->
+                <div id="category-filter" class="category-filter hidden">
+                    <h3>Select Categories</h3>
+                    <div class="category-chips" id="categoryChips"></div>
+                    <button class="btn-primary" onclick="startPractice()">Start Practice</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- QUIZ PAGE -->
+        <div id="quiz" class="screen">
+            <div class="quiz-header">
+                <button class="btn-back" onclick="goHome()">← Back</button>
+                <div class="quiz-progress">
+                    <span id="questionCounter">1/40</span>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                </div>
+                <div id="timer" class="timer hidden">⏱️ <span id="timerValue">45:00</span></div>
+            </div>
+
+            <div class="quiz-body">
+                <div class="quiz-badges">
+                    <div class="category-badge" id="categoryBadge">Microbiology</div>
+                    <div class="auth-badge hidden" id="authBadge">✅ Official</div>
+                </div>
+                <div class="question-card" id="questionCard">
+                    <p class="question-text" id="questionText">Loading question...</p>
+                </div>
+
+                <div class="answer-buttons">
+                    <button class="btn-answer btn-true" id="btnTrue" onclick="answer(true)">
+                        <span class="answer-icon">✓</span> TRUE
+                    </button>
+                    <button class="btn-answer btn-false" id="btnFalse" onclick="answer(false)">
+                        <span class="answer-icon">✗</span> FALSE
+                    </button>
+                </div>
+
+                <div class="feedback-card hidden" id="feedbackCard">
+                    <div class="feedback-icon" id="feedbackIcon"></div>
+                    <div class="feedback-text" id="feedbackText"></div>
+                    <p class="explanation" id="explanation"></p>
+                    <button class="btn-next" onclick="nextQuestion()">Next Question →</button>
+                </div>
+            </div>
+
+            <div class="quiz-stats">
+                <div class="stat">
+                    <span class="stat-value correct" id="correctCount">0</span>
+                    <span class="stat-label">Correct</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value wrong" id="wrongCount">0</span>
+                    <span class="stat-label">Wrong</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value" id="accuracyValue">0%</span>
+                    <span class="stat-label">Accuracy</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- RESULTS PAGE -->
+        <div id="results" class="screen">
+            <div class="results-container">
+                <div class="results-icon" id="resultsIcon"></div>
+                <h2 id="resultsTitle">Results</h2>
+                <p class="results-subtitle" id="resultsSubtitle"></p>
+
+                <div class="score-circle">
+                    <svg viewBox="0 0 120 120">
+                        <circle class="score-bg" cx="60" cy="60" r="54"></circle>
+                        <circle class="score-progress" cx="60" cy="60" r="54" id="scoreCircle"></circle>
+                    </svg>
+                    <div class="score-text">
+                        <span class="score-number" id="scoreNumber">0</span>
+                        <span class="score-total">/40</span>
+                    </div>
+                </div>
+
+                <div class="results-breakdown" id="resultsBreakdown"></div>
+
+                <div class="results-actions">
+                    <button class="btn-primary" onclick="startQuiz('exam')">Try Again</button>
+                    <button class="btn-secondary" onclick="reviewMistakes()">Review Mistakes</button>
+                    <button class="btn-secondary" onclick="goHome()">Home</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- STUDY GUIDE PAGE -->
+        <div id="study-guide" class="screen">
+            <div class="guide-header">
+                <button class="btn-back" onclick="goHome()">← Back</button>
+                <h2>Study Guide</h2>
+            </div>
+            <div class="guide-body" id="guideBody"></div>
+        </div>
+
+        <!-- REVIEW MISTAKES PAGE -->
+        <div id="review" class="screen">
+            <div class="guide-header">
+                <button class="btn-back" onclick="showResults()">← Back to Results</button>
+                <h2>Review Your Mistakes</h2>
+            </div>
+            <div class="review-body" id="reviewBody"></div>
+        </div>
+    </div>
+
+    <script src="questions.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

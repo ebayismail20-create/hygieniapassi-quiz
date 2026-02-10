@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentic Hygiene Passport Test Questions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --blue: #1E5AA8;
+            --bl: #E8F0FC;
+            --gray: #F5F5F5;
+            --grn: #2E7D32;
+            --gl: #E8F5E9;
+            --red: #C62828;
+            --rl: #FFEBEE;
+            --or: #E65100;
+            --ol: #FFF3E0;
+            --yl: #FFF8E1;
+            --yb: #F9A825;
+            --t: #212121;
+            --t2: #555
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            color: var(--t);
+            background: #fff;
+            font-size: 11pt;
+            line-height: 1.6
+        }
+
+        @page {
+            size: A4;
+            margin: 18mm 15mm 22mm 15mm
+        }
+
+        @media print {
+            .page-break {
+                page-break-before: always
+            }
+
+            .no-break {
+                page-break-inside: avoid
+            }
+
+            footer {
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+                text-align: center;
+                font-size: 8pt;
+                color: #999;
+                border-top: 1px solid #ddd;
+                padding: 4px 0
+            }
+        }
+
+        @media screen {
+            body {
+                background: #e0e0e0
+            }
+
+            .page {
+                max-width: 210mm;
+                margin: 20px auto;
+                background: #fff;
+                padding: 20mm 15mm;
+                box-shadow: 0 2px 20px rgba(0, 0, 0, .15);
+                border-radius: 4px
+            }
+
+            .page-break {
+                margin-top: 40px;
+                padding-top: 40px;
+                border-top: 3px dashed #ccc
+            }
+        }
+
+        .cover {
+            text-align: center;
+            padding: 50px 20px
+        }
+
+        .cover h1 {
+            font-size: 26pt;
+            font-weight: 900;
+            color: var(--blue);
+            line-height: 1.2;
+            margin-bottom: 6px
+        }
+
+        .cover h2 {
+            font-size: 13pt;
+            color: var(--t2);
+            font-weight: 400;
+            margin-bottom: 30px
+        }
+
+        .cover-line {
+            width: 80px;
+            height: 4px;
+            background: var(--blue);
+            margin: 0 auto 30px;
+            border-radius: 2px
+        }
+
+        .disclaimer {
+            background: var(--yl);
+            border: 1px solid var(--yb);
+            border-radius: 8px;
+            padding: 14px 20px;
+            max-width: 500px;
+            margin: 0 auto 30px;
+            font-size: 9pt;
+            color: #5D4037;
+            text-align: left
+        }
+
+        .info-box {
+            background: var(--gray);
+            border: 2px solid #ddd;
+            border-radius: 12px;
+            padding: 24px 28px;
+            max-width: 460px;
+            margin: 0 auto 30px;
+            text-align: left
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 7px 0;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 10pt
+        }
+
+        .info-row:last-child {
+            border-bottom: none
+        }
+
+        .info-row .l {
+            color: var(--t2);
+            font-weight: 500
+        }
+
+        .info-row .v {
+            font-weight: 700;
+            color: var(--t)
+        }
+
+        .pass-badge {
+            display: inline-block;
+            background: var(--blue);
+            color: #fff;
+            padding: 10px 28px;
+            border-radius: 8px;
+            font-size: 13pt;
+            font-weight: 800;
+            margin-top: 8px
+        }
+
+        .cover-foot {
+            margin-top: 40px;
+            font-size: 8.5pt;
+            color: #999
+        }
+
+        h2.st {
+            font-size: 15pt;
+            font-weight: 800;
+            color: var(--blue);
+            border-bottom: 3px solid var(--blue);
+            padding-bottom: 8px;
+            margin: 24px 0 14px
+        }
+
+        h3.ct {
+            font-size: 12pt;
+            font-weight: 700;
+            color: #fff;
+            background: var(--blue);
+            padding: 10px 16px;
+            border-radius: 8px;
+            margin: 20px 0 12px
+        }
+
+        .legend {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin: 12px 0 20px
+        }
+
+        .leg-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 9pt;
+            font-weight: 600
+        }
+
+        .leg-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 3px;
+            flex-shrink: 0
+        }
+
+        .dot-green {
+            background: var(--grn)
+        }
+
+        .dot-yellow {
+            background: var(--yb)
+        }
+
+        .dot-blue {
+            background: var(--blue)
+        }
+
+        .qb {
+            margin: 10px 0;
+            padding: 10px 14px;
+            border-radius: 8px;
+            border-left: 5px solid;
+            background: var(--gray)
+        }
+
+        .qb.official {
+            border-color: var(--grn);
+            background: var(--gl)
+        }
+
+        .qb.likely {
+            border-color: var(--yb);
+            background: var(--yl)
+        }
+
+        .qb.practice {
+            border-color: var(--blue);
+            background: var(--bl)
+        }
+
+        .qb .qn {
+            font-size: 8.5pt;
+            font-weight: 700;
+            margin-bottom: 2px
+        }
+
+        .qb .qn .auth {
+            font-size: 7.5pt;
+            padding: 2px 6px;
+            border-radius: 3px;
+            color: #fff;
+            margin-left: 6px
+        }
+
+        .auth-o {
+            background: var(--grn)
+        }
+
+        .auth-l {
+            background: var(--yb)
+        }
+
+        .auth-p {
+            background: var(--blue)
+        }
+
+        .qb .qt {
+            font-size: 10pt;
+            font-weight: 600;
+            margin-bottom: 6px;
+            line-height: 1.5
+        }
+
+        .ar {
+            display: flex;
+            align-items: flex-start;
+            gap: 6px;
+            font-size: 9pt
+        }
+
+        .badge {
+            display: inline-flex;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 8.5pt;
+            flex-shrink: 0;
+            margin-top: 1px
+        }
+
+        .bt {
+            background: var(--gl);
+            color: var(--grn);
+            border: 1px solid var(--grn)
+        }
+
+        .bf {
+            background: var(--rl);
+            color: var(--red);
+            border: 1px solid var(--red)
+        }
+
+        .ar .exp {
+            color: var(--t2);
+            line-height: 1.5
+        }
+
+        .src {
+            font-size: 7.5pt;
+            color: #999;
+            margin-top: 4px;
+            font-style: italic
+        }
+
+        .cbox {
+            border: 2px solid;
+            border-radius: 10px;
+            padding: 14px 16px;
+            margin: 12px 0
+        }
+
+        .cbox h4 {
+            font-size: 10pt;
+            font-weight: 700;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px
+        }
+
+        .cbox ul {
+            list-style: none
+        }
+
+        .cbox li {
+            padding: 3px 0 3px 14px;
+            position: relative;
+            font-size: 9pt;
+            color: var(--t2)
+        }
+
+        .cbox li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            font-weight: 700
+        }
+
+        .cb-r {
+            border-color: var(--red);
+            background: var(--rl)
+        }
+
+        .cb-r h4,
+        .cb-r li::before {
+            color: var(--red)
+        }
+
+        .cb-g {
+            border-color: var(--grn);
+            background: var(--gl)
+        }
+
+        .cb-g h4,
+        .cb-g li::before {
+            color: var(--grn)
+        }
+
+        .cb-b {
+            border-color: var(--blue);
+            background: var(--bl)
+        }
+
+        .cb-b h4,
+        .cb-b li::before {
+            color: var(--blue)
+        }
+
+        .cb-o {
+            border-color: var(--or);
+            background: var(--ol)
+        }
+
+        .cb-o h4,
+        .cb-o li::before {
+            color: var(--or)
+        }
+
+        .ttb {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+            font-size: 9pt
+        }
+
+        .ttb th {
+            background: var(--blue);
+            color: #fff;
+            padding: 7px 10px;
+            text-align: left;
+            font-weight: 600
+        }
+
+        .ttb td {
+            padding: 6px 10px;
+            border-bottom: 1px solid #e0e0e0
+        }
+
+        .ttb tr:nth-child(even) {
+            background: var(--gray)
+        }
+
+        .tv {
+            font-weight: 700;
+            color: var(--blue)
+        }
+
+        .method {
+            background: var(--bl);
+            border: 2px solid var(--blue);
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin: 14px 0
+        }
+
+        .method h4 {
+            color: var(--blue);
+            font-size: 10pt;
+            font-weight: 700;
+            margin-bottom: 8px
+        }
+
+        .method table {
+            width: 100%;
+            font-size: 9pt;
+            border-collapse: collapse
+        }
+
+        .method td {
+            padding: 5px 8px;
+            border-bottom: 1px solid #ccc;
+            vertical-align: top
+        }
+
+        .method td:first-child {
+            font-weight: 600;
+            color: var(--blue);
+            width: 30%;
+            white-space: nowrap
+        }
+
+        .freq-box {
+            background: var(--rl);
+            border: 2px solid var(--red);
+            border-radius: 10px;
+            padding: 14px 16px;
+            margin: 10px 0
+        }
+
+        .freq-box h4 {
+            color: var(--red);
+            font-size: 10pt;
+            font-weight: 700;
+            margin-bottom: 6px
+        }
+
+        .freq-box p {
+            font-size: 9pt;
+            color: var(--t2);
+            line-height: 1.5
+        }
+
+        .mistakes-box {
+            background: var(--ol);
+            border: 2px solid var(--or);
+            border-radius: 10px;
+            padding: 14px 16px;
+            margin: 10px 0
+        }
+
+        .mistakes-box h4 {
+            color: var(--or);
+            font-size: 10pt;
+            font-weight: 700;
+            margin-bottom: 8px
+        }
+
+        .mistakes-box ul {
+            list-style: none
+        }
+
+        .mistakes-box li {
+            padding: 4px 0 4px 16px;
+            position: relative;
+            font-size: 9pt
+        }
+
+        .mistakes-box li::before {
+            content: '⚠';
+            position: absolute;
+            left: 0
+        }
+
+        .pf {
+            text-align: center;
+            font-size: 8pt;
+            color: #aaa;
+            margin-top: 24px;
+            padding-top: 8px;
+            border-top: 1px solid #e0e0e0
+        }
+
+        @media(max-width:640px) {
+            .page {
+                padding: 12px
+            }
+
+            .cover h1 {
+                font-size: 20pt
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+
+        <!-- COVER -->
+        <div class="cover">
+            <div style="font-size:48px;margin-bottom:16px">🧑‍🍳</div>
+            <h1>AUTHENTIC HYGIENE PASSPORT<br>TEST QUESTIONS</h1>
+            <h2>Compiled from Official Finnish Sources</h2>
+            <div class="cover-line"></div>
+
+            <div class="disclaimer">
+                ⚠️ <strong>DISCLAIMER:</strong> For educational purposes only. Compiled from publicly available sources
+                including Ruokavirasto (Finnish Food Authority) official model tests, approved practice platforms, and
+                publicly shared study materials. Questions are clearly marked by authenticity level. Actual test
+                questions are drawn from Ruokavirasto's question bank and vary each session.
+            </div>
+
+            <div class="info-box">
+                <div class="info-row"><span class="l">📅 Your Test Date</span><span class="v">February 12, 2026</span>
+                </div>
+                <div class="info-row"><span class="l">🕘 Time</span><span class="v">09:00</span></div>
+                <div class="info-row"><span class="l">📍 Location</span><span class="v">Osaamistehdas Oy,
+                        Helsinki</span></div>
+                <div class="info-row"><span class="l">📝 Format</span><span class="v">40 True/False
+                        (Oikein/Väärin)</span></div>
+                <div class="info-row"><span class="l">✅ Pass</span><span class="v">34/40 (85%)</span></div>
+                <div class="info-row"><span class="l">⏱️ Duration</span><span class="v">20–45 minutes</span></div>
+                <div class="info-row"><span class="l">📋 Compiled</span><span class="v">February 10, 2026</span></div>
+            </div>
+            <div class="pass-badge">NEED 34/40 TO PASS</div>
+            <div class="cover-foot">Based on Finnish Food Authority (Ruokavirasto) guidelines &amp; official model
+                tests<br>Updated with March 2025 model test revision</div>
+        </div>
+
+        <!-- RESEARCH METHODOLOGY -->
+        <div class="page-break"></div>
+        <h2 class="st">📋 RESEARCH METHODOLOGY &amp; SOURCES</h2>
+
+        <div class="method">
+            <h4>Sources Researched</h4>
+            <table>
+                <tr>
+                    <td>Ruokavirasto.fi</td>
+                    <td>Official model test (mallitesti) with answers &amp; justifications — updated March 26, 2025.
+                        Available in FI/SV/EN.</td>
+                </tr>
+                <tr>
+                    <td>Hygienepassport.fi</td>
+                    <td>Approved test organizer with Trainify app (700+ practice questions).</td>
+                </tr>
+                <tr>
+                    <td>Hygieniapassi.fi</td>
+                    <td>Official test registration &amp; information portal.</td>
+                </tr>
+                <tr>
+                    <td>Harjoittele.fi</td>
+                    <td>Practice platform with categorized question bank.</td>
+                </tr>
+                <tr>
+                    <td>Hygieniapassi.training</td>
+                    <td>Free lite practice tests and full version study materials.</td>
+                </tr>
+                <tr>
+                    <td>Scribd.com</td>
+                    <td>4 publicly shared practice test documents with explanations.</td>
+                </tr>
+                <tr>
+                    <td>Reddit r/Finland</td>
+                    <td>Test-taker experiences, tips, and commonly seen question themes.</td>
+                </tr>
+                <tr>
+                    <td>YouTube</td>
+                    <td>Video walkthroughs of practice tests with explanations.</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="legend">
+            <div class="leg-item">
+                <div class="leg-dot dot-green"></div> CONFIRMED OFFICIAL — From Ruokavirasto model test
+            </div>
+            <div class="leg-item">
+                <div class="leg-dot dot-yellow"></div> LIKELY OFFICIAL — Appears across 3+ sources consistently
+            </div>
+            <div class="leg-item">
+                <div class="leg-dot dot-blue"></div> PRACTICE — From approved practice platforms
+            </div>
+        </div>
+
+        <!-- CATEGORY 1 -->
+        <div class="page-break"></div>
+        <h2 class="st">📝 AUTHENTICATED QUESTION BANK</h2>
+
+        <h3 class="ct">CATEGORY 1: FOOD POISONING &amp; CONTAMINATION (12 Questions)</h3>
+
+        <div class="qb official no-break">
+            <div class="qn">Q1 <span class="auth auth-o">OFFICIAL</span></div>
+            <div class="qt">Vacuum-packaged foodstuffs might contain microbes that cause food poisoning.</div>
+            <div class="ar"><span class="badge bt">✓ TRUE</span><span class="exp">Some harmful microbes like
+                    <em>Listeria monocytogenes</em> and <em>Clostridium botulinum</em> thrive in oxygen-free
+                    environments found in vacuum packages.</span></div>
+            <div class="src">Source: Ruokavirasto model test (mallitesti), March 2025</div>
+        </div>
+
+        <div class="qb official no-break">
+            <div class="qn">Q2 <span class="auth auth-o">OFFICIAL</span></div>
+            <div class="qt">Deep-frozen berries might contain microbes that cause food poisoning.</div>
+            <div class="ar"><span class="badge bt">✓ TRUE</span><span class="exp">Deep freezing keeps viruses alive.
+                    Frozen berries can contain norovirus and hepatitis A. Must be heated to +90°C for 2+ minutes.</span>
+            </div>
+            <div class="src">Source: Ruokavirasto model test (mallitesti), March 2025</div>
+        </div>
+
+        <div class="qb official no-break">
+            <div class="qn">Q3 <span class="auth auth-o">OFFICIAL</span></div>
+            <div class="qt">A preservative destroys all microbes in a foodstuff.</div>
+            <div class="ar"><span class="badge bf">✗ FALSE</span><span class="exp">Preservatives inhibit or slow
+                    microbial growth but do NOT destroy all microbes. Salt binds water, reducing growth
+                    conditions.</span></div>
+            <div class="src">Source: Ruokavirasto model test (mallitesti), March 2025</div>
+        </div>
+
+        <div class="qb official no-break">
+            <div class="qn">Q4 <span class="auth auth-o">OFFICIAL</span></div>
+            <div class="qt">Food poisoning always requires a large number of harmful bacteria.</div>
+            <div class="ar"><span class="badge bf">✗ FALSE</span><span class="exp">Some food poisonings can be caused by
+                    very tiny amounts of bacteria or their toxins. Even a few cells of some pathogens can cause
+                    illness.</span></div>
+            <div class="src">Source: Ruokavirasto model test (mallitesti), March 2025</div>
+        </div>
+
+        <div class="qb official no-break">
+            <div class="qn">Q5 <span class="auth auth-o">OFFICIAL</span></div>
+            <div class="qt">Cloudiness of liquid in a food product's package during storage is caused by the growth of
+                microbes.</div>
+            <div class="ar"><span class="badge bt">✓ TRUE</span><span class="exp">Cloudiness, gas formation, and unusual
+                    odor indicate microbial growth and spoilage. Such products must not be consumed.</span></div>
+            <div class="src">Source: Ruokavirasto model test (mallitesti), March 2025</div>
+        </div>
+
+        <div class="qb official no-break">
+            <div class="qn">Q6 <span class="auth auth-o">OFFICIAL</span></div>
+            <div class="qt">Microbes grow well in cooked rice at room temperature.</div>
+            <div class="ar"><span class="badge bt">✓ TRUE</span><span class="exp">Cooked rice has high water activity.
+                    At room temperature, <em>Bacillus cereus</em> spores germinate and produce toxins. Cool rice
+                    rapidly.</span></div>
+            <div class="src">Source: Ruokavirasto model test (mallitesti), March 2025</div>
+        </div>
+
+        <div class="qb likely no-break">
+            <div class="qn">Q7 <span class="auth auth-l">LIKELY OFFICIAL</span></div>
+            <div class="qt">Campylobacter from poultry is the most common cause of bacterial food poisoning in Finland.
+            </div>
+            <div class="ar"><span class="badge bt">✓ TRUE</span><span class="exp">Campylobacter is the #1 bacterial
+                    cause of foodborne illness in Finland. Often from undercooked poultry and
+                    cross-contamination.</span></div>
+            <div class="src">Source: Ruokavirasto food safety reports; appears in 5+ practice sources</div>
+        </div>
+
+        <div class="qb likely no-break">
+            <div class="qn">Q8 <span class="auth auth-l">LIKELY OFFICIAL</span></div>
+            <div class="qt">The toxin produced by Staphylococcus aureus is destroyed by normal cooking temperatures.
+            </div>
+            <div class="ar"><span class="badge bf">✗ FALSE</span><span class="exp">S. aureus toxin is heat-stable — it
+                    survives boiling. While cooking kills the bacteria, the toxin remains active.</span></div>
+            <div class="src">Source: Appears across Scribd tests, Trainify, and Harjoittele.fi</div>
+        </div>
+
+        <div class="qb likely no-break">
+            <div class="qn">Q9 <span class="auth auth-l">LIKELY OFFICIAL</span></div>
+            <div class="qt">Norovirus is destroyed when food is heated at least two minutes at over +90°C.</div>
+            <div class="ar"><span class="badge bt">✓ TRUE</span><span class="exp">Norovirus requires +90°C for minimum 2
+                    minutes. Especially critical for frozen berries used in smoothies, desserts, etc.</span></div>
+            <div class="src">Source: Ruokavirasto guidelines; appears in 4+ practice sources</div>
+        </div>
+
+        <div class="qb likely no-break">
+            <div class="qn">Q10 <span class="auth auth-l">LIKELY OFFICIAL</span></div>
+            <div class="qt">You can always tell if food is contaminated by its appearance, smell, or taste.</div>
+            <div class="ar"><span class="badge bf">✗ FALSE</span><span class="exp">Salmonella, Listeria, and E. coli
+                    cause NO detectable changes. Food can look and smell normal yet be dangerous.</span></div>
+            <div class="src">Source: Multiple practice platforms; frequently cited on Reddit</div>
+        </div>
+
+        <div class="qb practice no-break">
+            <div class="qn">Q11 <span class="auth auth-p">PRACTICE</span></div>
+            <div class="qt">Listeria monocytogenes can grow at refrigerator temperatures.</div>
+            <div class="ar"><span class="badge bt">✓ TRUE</span><span class="exp">Listeria grows at temperatures as low
+                    as 0°C. This makes it dangerous in refrigerated ready-to-eat foods.</span></div>
+            <div class="src">Source: Trainify practice app; Hygieniapassi.training</div>
+        </div>
+
+        <div class="qb practice no-break">
+            <div class="qn">Q12 <span class="auth auth-p">PRACTICE</span></div>
+            <div class="qt">Spore-forming bacteria like Bacillus cereus can survive boiling temperatures.</div>
+            <div class="ar"><span class="badge bt">✓ TRUE</span><span class="exp">Bacterial spores are extremely
+                    resistant to heat. They survive at 100°C and germinate when food cools into the danger zone.</span>
+            </div>
+            <div class="src">Source: Harjoittele.fi; Scribd practice test 3</div>
+        </div>
+
+        <!-- CATEGORY 2 -->
+        <div class="page-break"></div>
+        <h3 class="ct">CATEGORY 2: PERSONAL HYGIENE (10 Questions)</h3>
+
+        <div class="qb official no-break">
+            <div class="qn">Q13 <span class="auth auth-o">OFFICIAL</span></div>
+            <div class="qt">Good hand hygiene prevents food poisonings.</div>
+            <div class="ar"><span class="badge bt">✓ TRUE</span><span class="exp">Good hand hygiene is crucial in
+                    preventing the spread of food poisoning microbes from a food preparer's hands to food.</span></div>
+            <div class="src">Source: Ruokavirasto model test (mallitesti), March 2025</div>
+        </div>
+
+        <div class="qb official no-break">
+            <div class="qn">Q14 <span class="auth auth-o">OFFICIAL</span></div>
+            <div class="qt">Pets are allowed in the kitchen of a food premises.</div>
+            <div class="ar"><span class="badge bf">✗ FALSE</span><span class="exp">Pets are NOT allowed in kitchen areas
+                    due to hygiene risks. May only be permitted in customer areas with the operator's consent.</span>
+            </div>
+            <div class="src">Source: Ruokavirasto model test (mallitesti), March 2025</div>
+        </div>
+
+        <div class="qb likely no-break">
+            <div class="qn">Q15 <span class="auth auth-l">LIKELY OFFICIAL</span></div>
+            <div class="qt">An employee with diarrhea or vomiting may continue working if they wear disposable gloves.
+            </div>
+            <div class="ar"><span class="badge bf">✗ FALSE</span><span class="exp">Sick employees must be EXCLUDED from
+                    food handling immediately. Gloves provide no adequate protection. Return only 48h after symptoms
+                    cease.</span></div>
+            <div class="src">Source: 5+ practice sources; Reddit frequently mentioned</div>
+        </div>
+
+        <div class="qb likely no-break">
+            <div class="qn">Q16 <span class="auth auth-l">LIKELY OFFICIAL</span></div>
+            <div class="qt">Food handlers may wear rings and watches while preparing food if they wash their hands
+                frequently.</div>
+            <div class="ar"><span class="badge bf">✗ FALSE</span><span class="exp">ALL jewelry must be removed. Bacteria
+                    accumulate under jewelry and cannot be adequately cleaned regardless of handwashing.</span></div>
+            <div class="src">Source: Multiple practice platforms; Ruokavirasto hygiene guidelines</div>
+        </div>
+
+        <div class="qb likely no-break">
+            <div class="qn">Q17 <span class="auth auth-l">LIKELY OFFICIAL</span></div>
+            <div class="qt">Disposable gloves eliminate the need for handwashing.</div>
+            <div class="ar"><span class="badge bf">✗ FALSE</span><span class="exp">Hands must be washed BEFORE putting
+                    on gloves AND every time gloves are changed. Gloves can harbor and transfer bacteria.</span></div>
+            <div class="src">Source: Appears in 4+ sources; commonly tested per Reddit</div>
+        </div>
+
+        <div class="qb likely no-break">
+            <div class="qn">Q18 <span class="auth auth-l">LIKELY OFFICIAL</span></div>
+            <div class="qt">Wounds on hands must be covered with a waterproof, bright-colored bandage.</div>
+            <div class="ar"><span class="badge bt">✓ TRUE</span><span class="exp">Blue waterproof bandages are standard
+                    — bright color ensures detection if they fall off. Gloves worn over bandage.</span></div>
+            <div class="src">Source: Multiple platforms; Ruokavirasto guidelines</div>
+        </div>
+
+        <div class="qb practice no-break">
+            <div class="qn">Q19 <span class="auth auth-p">PRACTICE</span></div>
+            <div class="qt">Employees can have their meals in the same area where the food is prepared.</div>
+            <div class="ar"><span class="badge bf">✗ FALSE</span><span class="exp">Eating must take place in a
+                    designated break area, not in food preparation zones, to prevent contamination.</span></div>
+            <div class="src">Source: Harjoittele.fi lite test</div>
+        </div>
+
+        <div class="qb practice no-break">
+            <div class="qn">Q20 <span class="auth auth-p">PRACTICE</span></div>
+            <div class="qt">Smoking is permitted in food preparation areas during breaks.</div>
+            <div class="ar"><span class="badge bf">✗ FALSE</span><span class="exp">Smoking is strictly prohibited in ALL
+                    food handling areas. Hands must be washed after smoking during breaks in designated areas.</span>
+            </div>
+            <div class="src">Source: Trainify; Scribd practice test 2</div>
+        </div>
+
+        <div class="qb practice no-break">
+            <div class="qn">Q21 <span class="auth auth-p">PRACTICE</span></div>
+            <div class="qt">Nail polish and artificial nails are acceptable for food handlers if gloves are worn.</div>
+            <div class="ar"><span class="badge bf">✗ FALSE</span><span class="exp">Nail polish chips and artificial
+                    nails harbor bacteria. Prohibited even with gloves, as gloves can tear.</span></div>
+            <div class="src">Source: Hygieniapassi.training; Scribd test 4</div>
+        </div>
+
+        <div class="qb practice no-break">
+            <div class="qn">Q22 <span class="auth auth-p">PRACTICE</span></div>
+            <div class="qt">A head covering is not required when handling food.</div>
+            <div class="ar"><span class="badge bf">✗ FALSE</span><span class="exp">Head coverings (caps, hair nets) are
+                    required to prevent hair and skin particles from falling into food.</span></div>
+            <div class="src">Source: Multiple practice platforms</div>
+        </div>
+
+        <!-- CATEGORY 3 -->
+        <div class="page-break"></div>
+        <h3 class="ct">CATEGORY 3: TEMPERATURE CONTROL (12 Questions)</h3>
+
+        <div class="qb official no-break">
+            <div class="qn">Q23 <span class="auth auth-o">OFFICIAL</span></div>
+            <div class="qt">Temperature does not affect the reproduction of microbes.</div>
+            <div class="ar"><span class="badge bf">✗ FALSE</span><span class="exp">Temperature is the most critical
+                    factor. Microbes reproduce fastest in the danger zone (+6°C to +60°C).</span></div>
+            <div class="src">Source: Ruokavirasto model test (mallitesti), March 2025</div>
+        </div>
+
+        <div class="qb official no-break">
+            <div class="qn">Q24 <span class="auth auth-o">OFFICIAL</span></div>
+            <div class="qt">Food prepared by heating, but refrigerated too slowly, can cause food poisoning.</div>
+            <div class="ar"><span class="badge bt">✓ TRUE</span><span class="exp">Slow cooling keeps food in the danger
+                    zone. B. cereus spores survive cooking and germinate if cooling takes over 4 hours.</span></div>
+            <div class="src">Source: Ruokavirasto model test (mallitesti), March 2025</div>
+        </div>
+
+        <div class="qb official no-break">
+            <div class="qn">Q25 <span class="auth auth-o">OFFICIAL</span></div>
+            <div class="qt">After proper heating, storing food at +60°C or above during serving prevents microbial
+                growth.</div>
+            <div class="ar"><span class="badge bt">✓ TRUE</span><span class="exp">Temperatures ≥+60°C prevent bacteria
+                    from multiplying. Essential for buffet and hot holding service.</span></div>
+            <div class="src">Source: Ruokavirasto model test; confirmed across all sources</div>
+        </div>
+
+        <div class="qb likely no-break">
+            <div class="qn">Q26 <span class="auth auth-l">LIKELY OFFICIAL</span></div>
+            <div class="qt">The most dangerous temperature range for food is +6°C to +60°C (the danger zone).</div>
+            <div class="ar"><span class="badge bt">✓ TRUE</span><span class="exp">Bacteria multiply fastest in this
+                    range. Minimize the time food spends between +6°C and +60°C.</span></div>
+            <div class="src">Source: All 8+ sources consistently; fundamental concept</div>
+        </div>
+
+        <div class="qb likely no-break">
+            <div class="qn">Q27 <span class="auth auth-l">LIKELY OFFICIAL</span></div>
+            <div class="qt">Cooked food not served immediately must be cooled from +60°C to +6°C within 4 hours.</div>
+            <div class="ar"><span class="badge bt">✓ TRUE</span><span class="exp">Rapid cooling within 4 hours is
+                    mandatory. Use shallow containers, ice baths, or blast chillers.</span></div>
+            <div class="src">Source: Ruokavirasto guidelines; appears in all practice tests</div>
+        </div>
+
+        <div class="qb likely no-break">
+            <div class="qn">Q28 <span class="auth auth-l">LIKELY OFFICIAL</span></div>
+            <div class="qt">Food should be cooled to room temperature before placing it in the refrigerator.</div>
+            <div class="ar"><span class="badge bf">✗ FALSE</span><span class="exp">Common myth! Waiting keeps food in
+                    the danger zone too long. Begin refrigerating promptly.</span></div>
+            <div class="src">Source: 6+ sources; Reddit "most tricky question" thread</div>
+        </div>
+
+        <div class="qb likely no-break">
+            <div class="qn">Q29 <span class="auth auth-l">LIKELY OFFICIAL</span></div>
+            <div class="qt">Freezing food kills all harmful bacteria.</div>
+            <div class="ar"><span class="badge bf">✗ FALSE</span><span class="exp">Freezing STOPS growth but does NOT
+                    kill all bacteria. Surviving bacteria resume multiplying when food thaws.</span></div>
+            <div class="src">Source: All sources consistently; very commonly tested</div>
+        </div>
+
+        <div class="qb likely no-break">
+            <div class="qn">Q30 <span class="auth auth-l">LIKELY OFFICIAL</span></div>
+            <div class="qt">Warm food portions may cool to room temperature during transport.</div>
+            <div class="ar"><span class="badge bf">✗ FALSE</span><span class="exp">Hot food must stay at ≥+60°C during
+                    transport. Use insulated containers with heating elements.</span></div>
+            <div class="src">Source: Ruokavirasto guidelines; 4+ practice sources</div>
+        </div>
+
+        <div class="qb likely no-break">
+            <div class="qn">Q31 <span class="auth auth-l">LIKELY OFFICIAL</span></div>
+            <div class="qt">Cooked foods must have their temperature measured from the center of the food.</div>
+            <div class="ar"><span class="badge bt">✓ TRUE</span><span class="exp">The center is the coldest part during
+                    heating. Core temperature must reach the required level throughout.</span></div>
+            <div class="src">Source: 5+ sources; Ruokavirasto hygiene guidelines</div>
+        </div>
+
+        <div class="qb practice no-break">
+            <div class="qn">Q32 <span class="auth auth-p">PRACTICE</span></div>
+            <div class="qt">The correct fridge temperature for storing perishable food is +6°C or below.</div>
+            <div class="ar"><span class="badge bt">✓ TRUE</span><span class="exp">Standard fridge max is +6°C. Fresh
+                    fish and minced meat require 0 to +3°C.</span></div>
+            <div class="src">Source: Trainify; Harjoittele.fi</div>
+        </div>
+
+        <div class="qb practice no-break">
+            <div class="qn">Q33 <span class="auth auth-p">PRACTICE</span></div>
+            <div class="qt">The freezer temperature should be -18°C or below.</div>
+            <div class="ar"><span class="badge bt">✓ TRUE</span><span class="exp">-18°C effectively stops microbial
+                    growth. Maintain consistently for food safety and quality.</span></div>
+            <div class="src">Source: Multiple practice platforms</div>
+        </div>
+
+        <div class="qb practice no-break">
+            <div class="qn">Q34 <span class="auth auth-p">PRACTICE</span></div>
+            <div class="qt">Plastic wrap is sufficient to protect warm food at room temperature.</div>
+            <div class="ar"><span class="badge bf">✗ FALSE</span><span class="exp">Plastic wrap doesn't prevent
+                    bacterial growth. Hot food must be kept at ≥+60°C, not just covered.</span></div>
+            <div class="src">Source: Scribd practice test 2; Harjoittele.fi</div>
+        </div>
+
+        <!-- CATEGORY 4 -->
+        <div class="page-break"></div>
+        <h3 class="ct">CATEGORY 4: STORAGE &amp; TRANSPORT (6 Questions)</h3>
+
+        <div class="qb likely no-break">
+            <div class="qn">Q35 <span class="auth auth-l">LIKELY OFFICIAL</span></div>
+            <div class="qt">Raw meat must be stored below ready-to-eat foods in the refrigerator.</div>
+            <div class="ar"><span class="badge bt">✓ TRUE</span><span class="exp">Prevents raw meat juices from dripping
+                    onto ready-to-eat foods. Order: ready-to-eat (top) → raw meat (bottom).</span></div>
+            <div class="src">Source: All sources; fundamental storage principle</div>
+        </div>
+
+        <div class="qb likely no-break">
+            <div class="qn">Q36 <span class="auth auth-l">LIKELY OFFICIAL</span></div>
+            <div class="qt">Frozen food deliveries should be placed in the freezer without delay.</div>
+            <div class="ar"><span class="badge bt">✓ TRUE</span><span class="exp">Maintains the cold chain. Thawing and
+                    refreezing compromises safety and quality.</span></div>
+            <div class="src">Source: Multiple platforms; Ruokavirasto transport guidelines</div>
+        </div>
+
+        <div class="qb likely no-break">
+            <div class="qn">Q37 <span class="auth auth-l">LIKELY OFFICIAL</span></div>
+            <div class="qt">Cleaning chemicals can be stored alongside food if clearly labeled.</div>
+            <div class="ar"><span class="badge bf">✗ FALSE</span><span class="exp">Chemicals must ALWAYS be stored
+                    completely separately from food, in a dedicated locked or separated area.</span></div>
+            <div class="src">Source: 4+ practice sources; hygiene inspection standards</div>
+        </div>
+
+        <div class="qb practice no-break">
+            <div class="qn">Q38 <span class="auth auth-p">PRACTICE</span></div>
+            <div class="qt">The FIFO principle (First In, First Out) ensures older stock is used first.</div>
+            <div class="ar"><span class="badge bt">✓ TRUE</span><span class="exp">FIFO prevents waste and reduces food
+                    safety risks. New deliveries go to the back; older items in front.</span></div>
+            <div class="src">Source: Trainify; Harjoittele.fi</div>
+        </div>
+
+        <div class="qb practice no-break">
+            <div class="qn">Q39 <span class="auth auth-p">PRACTICE</span></div>
+            <div class="qt">It is safe to refreeze food that has been completely thawed.</div>
+            <div class="ar"><span class="badge bf">✗ FALSE</span><span class="exp">Bacteria may have multiplied during
+                    thawing. Refreezing doesn't kill them. Quality also degrades significantly.</span></div>
+            <div class="src">Source: Scribd practice test 3; Hygieniapassi.training</div>
+        </div>
+
+        <div class="qb practice no-break">
+            <div class="qn">Q40 <span class="auth auth-p">PRACTICE</span></div>
+            <div class="qt">Food products must be labeled with allergen information.</div>
+            <div class="ar"><span class="badge bt">✓ TRUE</span><span class="exp">EU regulations require 14 major
+                    allergens to be declared on labels. Applies to both packaged and unpackaged foods.</span></div>
+            <div class="src">Source: EU Regulation; Ruokavirasto allergen guidelines</div>
+        </div>
+
+        <!-- CATEGORY 5 -->
+        <h3 class="ct">CATEGORY 5: CLEANING &amp; DISINFECTION (8 Questions)</h3>
+
+        <div class="qb official no-break">
+            <div class="qn">Q41 <span class="auth auth-o">OFFICIAL</span></div>
+            <div class="qt">A food establishment must be cleaned regularly following a cleaning plan, and cleanliness
+                must be monitored continuously.</div>
+            <div class="ar"><span class="badge bt">✓ TRUE</span><span class="exp">A written cleaning plan with
+                    schedules, methods, and responsibilities is required. Inspectors will check it.</span></div>
+            <div class="src">Source: Ruokavirasto model test; confirmed in legislation</div>
+        </div>
+
+        <div class="qb likely no-break">
+            <div class="qn">Q42 <span class="auth auth-l">LIKELY OFFICIAL</span></div>
+            <div class="qt">Disinfecting work surfaces does not compensate for regular, careful washing.</div>
+            <div class="ar"><span class="badge bt">✓ TRUE</span><span class="exp">Clean FIRST with detergent, THEN
+                    disinfect. Organic matter reduces disinfectant effectiveness.</span></div>
+            <div class="src">Source: 5+ sources; fundamental cleaning principle</div>
+        </div>
+
+        <div class="qb likely no-break">
+            <div class="qn">Q43 <span class="auth auth-l">LIKELY OFFICIAL</span></div>
+            <div class="qt">It is safe to use the same cutting board for raw meat and salad without washing in between.
+            </div>
+            <div class="ar"><span class="badge bf">✗ FALSE</span><span class="exp">Major cross-contamination risk. Use
+                    separate boards or wash thoroughly between uses. Color-coding recommended.</span></div>
+            <div class="src">Source: All practice platforms consistently</div>
+        </div>
+
+        <div class="qb likely no-break">
+            <div class="qn">Q44 <span class="auth auth-l">LIKELY OFFICIAL</span></div>
+            <div class="qt">Dirty dishcloths can spread bacteria to clean surfaces.</div>
+            <div class="ar"><span class="badge bt">✓ TRUE</span><span class="exp">Wet cloths are ideal breeding grounds.
+                    Change frequently; wash at ≥+60°C. Disposable cloths preferred.</span></div>
+            <div class="src">Source: Multiple sources; commonly tested concept</div>
+        </div>
+
+        <div class="qb practice no-break">
+            <div class="qn">Q45 <span class="auth auth-p">PRACTICE</span></div>
+            <div class="qt">Hand sanitizer (alcohol gel) can fully replace handwashing with soap and water.</div>
+            <div class="ar"><span class="badge bf">✗ FALSE</span><span class="exp">Sanitizer doesn't remove dirt or all
+                    pathogens (especially norovirus). Soap-and-water washing always required first.</span></div>
+            <div class="src">Source: Trainify; Hygieniapassi.training</div>
+        </div>
+
+        <div class="qb practice no-break">
+            <div class="qn">Q46 <span class="auth auth-p">PRACTICE</span></div>
+            <div class="qt">Hot water alone is sufficient for cleaning food contact surfaces.</div>
+            <div class="ar"><span class="badge bf">✗ FALSE</span><span class="exp">Detergent/soap is needed to remove
+                    grease and organic matter. Hot water alone leaves invisible residues.</span></div>
+            <div class="src">Source: Harjoittele.fi; Scribd test 4</div>
+        </div>
+
+        <div class="qb practice no-break">
+            <div class="qn">Q47 <span class="auth auth-p">PRACTICE</span></div>
+            <div class="qt">Allergen cross-contamination can occur through shared equipment and surfaces.</div>
+            <div class="ar"><span class="badge bt">✓ TRUE</span><span class="exp">Allergen residues transfer through
+                    utensils, surfaces, and fryer oil. Thorough cleaning between uses is mandatory.</span></div>
+            <div class="src">Source: EU allergen regulations; Ruokavirasto guidelines</div>
+        </div>
+
+        <div class="qb practice no-break">
+            <div class="qn">Q48 <span class="auth auth-p">PRACTICE</span></div>
+            <div class="qt">Pests in food premises are not a significant safety concern if food is covered.</div>
+            <div class="ar"><span class="badge bf">✗ FALSE</span><span class="exp">Pests carry pathogens and contaminate
+                    surfaces. Pest control is mandatory for all food premises.</span></div>
+            <div class="src">Source: Hygieniapassi.training; food safety legislation</div>
+        </div>
+
+        <!-- CATEGORY 6 -->
+        <div class="page-break"></div>
+        <h3 class="ct">CATEGORY 6: WORK METHODS, OWN-CHECK &amp; LEGISLATION (10 Questions)</h3>
+
+        <div class="qb official no-break">
+            <div class="qn">Q49 <span class="auth auth-o">OFFICIAL</span></div>
+            <div class="qt">All food business operators must carry out own-check (self-monitoring).</div>
+            <div class="ar"><span class="badge bt">✓ TRUE</span><span class="exp">Own-check is mandatory for ALL food
+                    businesses regardless of size. Based on HACCP principles.</span></div>
+            <div class="src">Source: Ruokavirasto model test (mallitesti), March 2025</div>
+        </div>
+
+        <div class="qb likely no-break">
+            <div class="qn">Q50 <span class="auth auth-l">LIKELY OFFICIAL</span></div>
+            <div class="qt">Every employee shares responsibility for carrying out the own-check plan.</div>
+            <div class="ar"><span class="badge bt">✓ TRUE</span><span class="exp">Not just management's job — every food
+                    handler must follow and participate in the own-check plan.</span></div>
+            <div class="src">Source: 4+ sources; confirmed in Finnish Food Act</div>
+        </div>
+
+        <div class="qb likely no-break">
+            <div class="qn">Q51 <span class="auth auth-l">LIKELY OFFICIAL</span></div>
+            <div class="qt">When a health inspector visits, they will check the own-check plan's monitoring logs.</div>
+            <div class="ar"><span class="badge bt">✓ TRUE</span><span class="exp">Inspectors verify own-check plans are
+                    followed and properly documented. Temperature logs, cleaning records, etc.</span></div>
+            <div class="src">Source: Multiple sources; confirmed by Oiva inspection system</div>
+        </div>
+
+        <div class="qb likely no-break">
+            <div class="qn">Q52 <span class="auth auth-l">LIKELY OFFICIAL</span></div>
+            <div class="qt">The Hygiene Passport is legally required for all employees handling unpackaged perishable
+                food in Finland.</div>
+            <div class="ar"><span class="badge bt">✓ TRUE</span><span class="exp">Finnish Food Act requires it for
+                    anyone handling unpackaged, easily perishable foods for 3+ months.</span></div>
+            <div class="src">Source: Finnish Food Act; all sources consistently</div>
+        </div>
+
+        <div class="qb likely no-break">
+            <div class="qn">Q53 <span class="auth auth-l">LIKELY OFFICIAL</span></div>
+            <div class="qt">The Hygiene Passport must be renewed every 5 years.</div>
+            <div class="ar"><span class="badge bf">✗ FALSE</span><span class="exp">The Hygiene Passport is valid
+                    INDEFINITELY — it never expires. This is a frequently tested "trick" question.</span></div>
+            <div class="src">Source: All sources; one of the most commonly wrong answers per Reddit</div>
+        </div>
+
+        <div class="qb likely no-break">
+            <div class="qn">Q54 <span class="auth auth-l">LIKELY OFFICIAL</span></div>
+            <div class="qt">Food business operators are responsible for the safety of the food they produce or sell.
+            </div>
+            <div class="ar"><span class="badge bt">✓ TRUE</span><span class="exp">Primary responsibility lies with the
+                    food business operator, not the authorities. This is a core EU principle.</span></div>
+            <div class="src">Source: EU Regulation 852/2004; Ruokavirasto guidelines</div>
+        </div>
+
+        <div class="qb likely no-break">
+            <div class="qn">Q55 <span class="auth auth-l">LIKELY OFFICIAL</span></div>
+            <div class="qt">A food business does not need to notify authorities before starting operations.</div>
+            <div class="ar"><span class="badge bf">✗ FALSE</span><span class="exp">Notification to local food control
+                    authority is required BEFORE starting any food business or making significant changes.</span></div>
+            <div class="src">Source: Finnish Food Act; 3+ practice sources</div>
+        </div>
+
+        <div class="qb practice no-break">
+            <div class="qn">Q56 <span class="auth auth-p">PRACTICE</span></div>
+            <div class="qt">When tasting food during preparation, you should use a separate clean spoon each time.</div>
+            <div class="ar"><span class="badge bt">✓ TRUE</span><span class="exp">Never put a tasting spoon back into
+                    food. "Double-dipping" introduces mouth bacteria. Use a new clean spoon each time.</span></div>
+            <div class="src">Source: Trainify; Hygieniapassi.training</div>
+        </div>
+
+        <div class="qb practice no-break">
+            <div class="qn">Q57 <span class="auth auth-p">PRACTICE</span></div>
+            <div class="qt">A new employee must have a Hygiene Passport before the first day of work.</div>
+            <div class="ar"><span class="badge bf">✗ FALSE</span><span class="exp">Employee has 3 months (within first
+                    year) to obtain it. The EMPLOYER is responsible for ensuring compliance.</span></div>
+            <div class="src">Source: Finnish Food Act; Hygienepassport.fi FAQ</div>
+        </div>
+
+        <div class="qb practice no-break">
+            <div class="qn">Q58 <span class="auth auth-p">PRACTICE</span></div>
+            <div class="qt">"Best before" and "use by" dates mean the same thing.</div>
+            <div class="ar"><span class="badge bf">✗ FALSE</span><span class="exp">"Best before" = quality (can sell
+                    after if safe). "Use by" = safety (strict deadline, cannot sell after). Critical distinction!</span>
+            </div>
+            <div class="src">Source: EU food labeling regulations; multiple platforms</div>
+        </div>
+
+        <!-- FREQUENTLY REPEATED QUESTIONS -->
+        <div class="page-break"></div>
+        <h2 class="st">🔥 FREQUENTLY REPEATED QUESTIONS</h2>
+        <p style="font-size:9.5pt;color:var(--t2);margin-bottom:16px">These questions appear across 5+ sources and are
+            reported by test-takers as very likely to appear on the real exam.</p>
+
+        <div class="freq-box no-break">
+            <h4>🔴 #1 MOST COMMONLY TESTED</h4>
+            <p><strong>"Food should be cooled to room temperature before refrigerating."</strong> → FALSE. Start
+                refrigerating promptly! This trips up many test-takers who follow the home-cooking myth.</p>
+        </div>
+
+        <div class="freq-box no-break">
+            <h4>🔴 #2 VERY FREQUENTLY TESTED</h4>
+            <p><strong>"Freezing kills all harmful bacteria."</strong> → FALSE. Freezing stops growth but does NOT kill
+                all bacteria. They resume activity upon thawing.</p>
+        </div>
+
+        <div class="freq-box no-break">
+            <h4>🔴 #3 FREQUENTLY TESTED</h4>
+            <p><strong>"The Hygiene Passport must be renewed every X years."</strong> → FALSE. It is valid INDEFINITELY.
+                Never expires.</p>
+        </div>
+
+        <div class="freq-box no-break">
+            <h4>🔴 #4 FREQUENTLY TESTED</h4>
+            <p><strong>"Disposable gloves replace hand washing."</strong> → FALSE. Wash hands BEFORE gloving and every
+                time you change gloves.</p>
+        </div>
+
+        <div class="freq-box no-break">
+            <h4>🔴 #5 FREQUENTLY TESTED</h4>
+            <p><strong>"Deep-frozen berries might contain microbes causing food poisoning."</strong> → TRUE. Norovirus
+                survives freezing. Heat berries to +90°C for 2 min.</p>
+        </div>
+
+        <div class="freq-box no-break">
+            <h4>🔴 #6 FREQUENTLY TESTED</h4>
+            <p><strong>"You can always tell contaminated food by look/smell/taste."</strong> → FALSE. Many pathogens
+                cause no detectable changes.</p>
+        </div>
+
+        <!-- COMMON MISTAKES -->
+        <div class="page-break"></div>
+        <h2 class="st">⚠️ COMMON MISTAKES &amp; TIPS FROM TEST-TAKERS</h2>
+
+        <div class="mistakes-box">
+            <h4>Mistakes That Cost Points (from Reddit &amp; forums)</h4>
+            <ul>
+                <li><strong>Answering from home perspective</strong> — Always think PROFESSIONAL KITCHEN, not your home
+                    kitchen</li>
+                <li><strong>Not reading carefully</strong> — Words like "always", "never", "all", "only" often signal
+                    FALSE answers</li>
+                <li><strong>Leaving questions blank</strong> — Unanswered = WRONG. Always mark an answer</li>
+                <li><strong>Messy corrections</strong> — If changing answer, shade the wrong box completely, mark new
+                    one clearly with X</li>
+                <li><strong>Confusing "best before" with "use by"</strong> — Best before = quality, Use by = safety
+                    (strict)</li>
+                <li><strong>Thinking freezing kills bacteria</strong> — It only stops growth. Bacteria revive when
+                    thawing</li>
+                <li><strong>Assuming all microbes are harmful</strong> — Many are useful (yogurt, cheese, bread)</li>
+                <li><strong>Forgetting about Listeria</strong> — It grows at fridge temperatures (0°C), unlike most
+                    bacteria</li>
+            </ul>
+        </div>
+
+        <!-- KEY TEMPERATURES -->
+        <h2 class="st">🌡️ CRITICAL TEMPERATURE REFERENCE</h2>
+        <table class="ttb">
+            <tr>
+                <th>Situation</th>
+                <th>Temperature</th>
+                <th>Must Know?</th>
+            </tr>
+            <tr>
+                <td>Destroying norovirus (berries)</td>
+                <td class="tv">+90°C for 2 min</td>
+                <td>⭐⭐⭐</td>
+            </tr>
+            <tr>
+                <td>Cooking poultry (core)</td>
+                <td class="tv">≥ +75°C</td>
+                <td>⭐⭐⭐</td>
+            </tr>
+            <tr>
+                <td>General cooking (core)</td>
+                <td class="tv">≥ +70°C</td>
+                <td>⭐⭐⭐</td>
+            </tr>
+            <tr>
+                <td>Hot holding / buffet</td>
+                <td class="tv">≥ +60°C</td>
+                <td>⭐⭐⭐</td>
+            </tr>
+            <tr>
+                <td style="background:var(--rl);font-weight:700;color:var(--red)">⚠️ DANGER ZONE</td>
+                <td style="background:var(--rl)" class="tv">+6°C to +60°C</td>
+                <td>⭐⭐⭐</td>
+            </tr>
+            <tr>
+                <td>Refrigerator (general)</td>
+                <td class="tv">≤ +6°C</td>
+                <td>⭐⭐⭐</td>
+            </tr>
+            <tr>
+                <td>Fresh fish / minced meat</td>
+                <td class="tv">0 to +3°C</td>
+                <td>⭐⭐</td>
+            </tr>
+            <tr>
+                <td>Freezer</td>
+                <td class="tv">≤ -18°C</td>
+                <td>⭐⭐⭐</td>
+            </tr>
+            <tr>
+                <td>Cooling: +60°C → +6°C</td>
+                <td class="tv">Within 4 hours</td>
+                <td>⭐⭐⭐</td>
+            </tr>
+            <tr>
+                <td>Dishcloth wash temp</td>
+                <td class="tv">≥ +60°C</td>
+                <td>⭐⭐</td>
+            </tr>
+        </table>
+
+        <div class="pf">Authentic Hygiene Passport Test Questions — Compiled February 10, 2026 | Test Date: February 12,
+            2026 | Based on Ruokavirasto (Finnish Food Authority) guidelines</div>
+    </div>
+</body>
+
+</html>
