@@ -370,6 +370,14 @@ function showStudyGuide() {
                 </div>
                 <div class="pdf-action">Open →</div>
             </a>
+            <a href="complete-study-guide.html" target="_blank" class="pdf-card">
+                <div class="pdf-icon">🎓</div>
+                <div class="pdf-info">
+                    <div class="pdf-title">40-Question Practice Test</div>
+                    <div class="pdf-desc">Categorized by topic (Poisoning, Hygiene, Temp, Storage, Cleaning, Law) with key concepts summary</div>
+                </div>
+                <div class="pdf-action">Open →</div>
+            </a>
         </div>
         <p style="font-size:.75rem;color:var(--t3);margin-top:10px;text-align:center">💡 Open a document, then press <strong style="color:var(--t2)">Ctrl+P → Save as PDF</strong> to download</p>
     </div>

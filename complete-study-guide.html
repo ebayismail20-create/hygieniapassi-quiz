@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hygiene Passport Test - Complete Study Guide (40 Questions)</title>
+    <style>
+        :root {
+            --bg: #0f0f1a;
+            --card: #1a1a2e;
+            --brd: #2a2a3e;
+            --acc: #6366f1;
+            --grn: #22c55e;
+            --red: #ef4444;
+            --yel: #f59e0b;
+            --t1: #f1f5f9;
+            --t2: #94a3b8;
+            --t3: #64748b;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--t1);
+            line-height: 1.7;
+            padding: 32px 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 40px 24px;
+            margin-bottom: 32px;
+            background: linear-gradient(135deg, rgba(99,102,241,0.12), rgba(139,92,246,0.08));
+            border: 1px solid rgba(99,102,241,0.2);
+            border-radius: 16px;
+        }
+
+        .header h1 {
+            font-size: 1.8rem;
+            background: linear-gradient(135deg, #6366f1, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
+
+        .header .subtitle {
+            font-size: 1rem;
+            color: var(--t2);
+        }
+
+        .header .badge {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 6px 16px;
+            border-radius: 999px;
+            font-size: .8rem;
+            font-weight: 600;
+            background: rgba(34,197,94,0.1);
+            border: 1px solid rgba(34,197,94,0.3);
+            color: var(--grn);
+        }
+
+        /* Category Header */
+        .category-header {
+            margin: 36px 0 20px;
+            padding: 16px 20px;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-left: 4px solid var(--acc);
+        }
+
+        .cat-poison { background: rgba(239,68,68,0.06); border-left-color: var(--red); color: #fca5a5; }
+        .cat-hygiene { background: rgba(99,102,241,0.06); border-left-color: var(--acc); color: #a5b4fc; }
+        .cat-temp { background: rgba(245,158,11,0.06); border-left-color: var(--yel); color: #fcd34d; }
+        .cat-storage { background: rgba(34,197,94,0.06); border-left-color: var(--grn); color: #86efac; }
+        .cat-clean { background: rgba(6,182,212,0.06); border-left-color: #06b6d4; color: #67e8f9; }
+        .cat-law { background: rgba(168,85,247,0.06); border-left-color: #a855f7; color: #c4b5fd; }
+
+        /* Question Card */
+        .question-card {
+            background: var(--card);
+            border: 1px solid var(--brd);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 14px;
+            transition: border-color 0.2s;
+        }
+
+        .question-card:hover {
+            border-color: var(--acc);
+        }
+
+        .q-number {
+            font-size: .75rem;
+            font-weight: 600;
+            color: var(--t3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .q-text {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--t1);
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        .q-answer {
+            display: inline-block;
+            padding: 4px 14px;
+            border-radius: 999px;
+            font-size: .8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .q-answer.true {
+            background: rgba(34,197,94,0.12);
+            color: var(--grn);
+            border: 1px solid rgba(34,197,94,0.3);
+        }
+
+        .q-answer.false {
+            background: rgba(239,68,68,0.12);
+            color: var(--red);
+            border: 1px solid rgba(239,68,68,0.3);
+        }
+
+        .q-explanation {
+            font-size: .88rem;
+            color: var(--t2);
+            line-height: 1.6;
+            padding-top: 10px;
+            border-top: 1px solid var(--brd);
+        }
+
+        .q-explanation strong {
+            color: var(--yel);
+        }
+
+        /* Key Concepts Section */
+        .key-concepts {
+            margin-top: 40px;
+            padding: 28px;
+            background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(245,158,11,0.06));
+            border: 1px solid rgba(99,102,241,0.2);
+            border-radius: 16px;
+        }
+
+        .key-concepts h2 {
+            font-size: 1.3rem;
+            color: var(--t1);
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .concept-group {
+            margin-bottom: 24px;
+        }
+
+        .concept-group h3 {
+            font-size: .95rem;
+            color: var(--acc);
+            margin-bottom: 10px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid var(--brd);
+        }
+
+        .concept-group ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .concept-group li {
+            font-size: .85rem;
+            color: var(--t2);
+            padding: 4px 0 4px 20px;
+            position: relative;
+        }
+
+        .concept-group li::before {
+            content: '•';
+            position: absolute;
+            left: 4px;
+            color: var(--yel);
+            font-weight: bold;
+        }
+
+        .temp-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+            font-size: .85rem;
+        }
+
+        .temp-table td {
+            padding: 8px 12px;
+            border-bottom: 1px solid var(--brd);
+        }
+
+        .temp-table td:first-child {
+            color: var(--t2);
+            width: 55%;
+        }
+
+        .temp-table td:last-child {
+            color: var(--yel);
+            font-weight: 600;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: var(--t3);
+            font-size: .8rem;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+                color: #1a1a2e;
+                padding: 10px;
+                font-size: 11pt;
+            }
+
+            .header {
+                background: none;
+                border: 2px solid #6366f1;
+                padding: 20px;
+            }
+
+            .header h1 {
+                background: none;
+                -webkit-text-fill-color: #6366f1;
+                font-size: 1.5rem;
+            }
+
+            .header .subtitle { color: #666; }
+            .header .badge { border: 1px solid #22c55e; color: #22c55e; background: none; }
+
+            .question-card {
+                background: white;
+                border: 1px solid #ddd;
+                break-inside: avoid;
+                page-break-inside: avoid;
+                padding: 14px;
+                margin-bottom: 10px;
+            }
+
+            .category-header {
+                break-after: avoid;
+                page-break-after: avoid;
+            }
+
+            .q-text { color: #1a1a2e; }
+            .q-answer.true { color: #16a34a; border-color: #16a34a; background: none; }
+            .q-answer.false { color: #dc2626; border-color: #dc2626; background: none; }
+            .q-explanation { color: #555; border-top: 1px solid #ddd; }
+            .q-explanation strong { color: #d97706; }
+
+            .key-concepts {
+                background: none;
+                border: 2px solid #6366f1;
+                break-inside: avoid;
+            }
+
+            .key-concepts h2 { color: #1a1a2e; }
+            .concept-group h3 { color: #6366f1; border-bottom: 1px solid #ddd; }
+            .concept-group li { color: #555; }
+            .concept-group li::before { color: #d97706; }
+            .temp-table td { border-bottom: 1px solid #eee; }
+            .temp-table td:first-child { color: #555; }
+            .temp-table td:last-child { color: #d97706; }
+
+            .footer { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- Header -->
+        <div class="header">
+            <h1>🛡️ HYGIENE PASSPORT TEST</h1>
+            <div class="subtitle">Complete Study Guide — 40 True/False Practice Questions with Explanations</div>
+            <div class="badge">✅ Based on Official Ruokavirasto Content</div>
+        </div>
+
+        <!-- CATEGORY 1: Food Poisoning -->
+        <div class="category-header cat-poison">🦠 Category 1: Food Poisoning and Contamination (Q1–Q8)</div>
+
+        <div class="question-card">
+            <div class="q-number">Question 1</div>
+            <div class="q-text">Salmonella bacteria can multiply in food at room temperature.</div>
+            <span class="q-answer true">✅ TRUE</span>
+            <div class="q-explanation">Salmonella grows best at temperatures between <strong>+20°C and +40°C</strong>, which includes typical room temperatures.</div>
+        </div>
+
+        <div class="question-card">
+            <div class="q-number">Question 2</div>
+            <div class="q-text">Food poisoning bacteria can be seen with the naked eye in spoiled food.</div>
+            <span class="q-answer false">❌ FALSE</span>
+            <div class="q-explanation">Bacteria are <strong>microscopic</strong> and cannot be seen without a microscope. Spoiled food may show signs like smell or mold, but bacteria themselves are invisible.</div>
+        </div>
+
+        <div class="question-card">
+            <div class="q-number">Question 3</div>
+            <div class="q-text">Freezing food kills all bacteria.</div>
+            <span class="q-answer false">❌ FALSE</span>
+            <div class="q-explanation">Freezing <strong>stops</strong> bacterial growth but does <strong>NOT kill</strong> bacteria. When food thaws, bacteria become active again and can multiply.</div>
+        </div>
+
+        <div class="question-card">
+            <div class="q-number">Question 4</div>
+            <div class="q-text">The most common cause of food poisoning in Finland is Campylobacter.</div>
+            <span class="q-answer true">✅ TRUE</span>
+            <div class="q-explanation"><strong>Campylobacter</strong> is indeed the most common cause of foodborne illness in Finland, usually from undercooked poultry or cross-contamination.</div>
+        </div>
+
+        <div class="question-card">
+            <div class="q-number">Question 5</div>
+            <div class="q-text">Food poisoning symptoms always appear immediately after eating contaminated food.</div>
+            <span class="q-answer false">❌ FALSE</span>
+            <div class="q-explanation">Incubation periods vary. Some bacteria cause symptoms within hours (<strong>Staphylococcus</strong>), while others take days (<strong>Salmonella, Campylobacter</strong>).</div>
+        </div>
+
+        <div class="question-card">
+            <div class="q-number">Question 6</div>
+            <div class="q-text">Bacillus cereus can survive cooking and multiply in rice left at room temperature.</div>
+            <span class="q-answer true">✅ TRUE</span>
+            <div class="q-explanation"><strong>Bacillus cereus</strong> forms heat-resistant spores. Cooked rice left at room temperature is a common source of this food poisoning.</div>
+        </div>
+
+        <div class="question-card">
+            <div class="q-number">Question 7</div>
+            <div class="q-text">A food handler with a wound on their hand can prepare food if they wear a bandage.</div>
+            <span class="q-answer false">❌ FALSE</span>
+            <div class="q-explanation">Only <strong>waterproof bandages</strong> are acceptable, and the wound must be completely covered. Regular bandages are not sufficient.</div>
+        </div>
+
+        <div class="question-card">
+            <div class="q-number">Question 8</div>
+            <div class="q-text">Botulism is caused by a toxin produced by Clostridium botulinum bacteria in oxygen-free environments.</div>
+            <span class="q-answer true">✅ TRUE</span>
+            <div class="q-explanation">This dangerous toxin forms in <strong>vacuum-packed foods, canned goods, or garlic oil</strong> stored at room temperature.</div>
+        </div>
+
+        <!-- CATEGORY 2: Personal Hygiene -->
+        <div class="category-header cat-hygiene">🧼 Category 2: Personal Hygiene (Q9–Q16)</div>
+
+        <div class="question-card">
+            <div class="q-number">Question 9</div>
+            <div class="q-text">Food handlers must always wear a hairnet or hat when handling food.</div>
+            <span class="q-answer true">✅ TRUE</span>
+            <div class="q-explanation">Hair must be <strong>completely covered</strong> to prevent it from falling into food.</div>
+        </div>
+
+        <div class="question-card">
+            <div class="q-number">Question 10</div>
+            <div class="q-text">You can handle food if you have a mild cold but no fever.</div>
+            <span class="q-answer false">❌ FALSE</span>
+            <div class="q-explanation"><strong>Any contagious illness</strong>, including colds, requires staying away from food handling. Even mild symptoms can spread viruses.</div>
+        </div>
+
+        <div class="question-card">
+            <div class="q-number">Question 11</div>
+            <div class="q-text">Hands must be washed after touching raw meat and before touching ready-to-eat foods.</div>
+            <span class="q-answer true">✅ TRUE</span>
+            <div class="q-explanation">This prevents <strong>cross-contamination</strong> from raw foods to ready-to-eat foods.</div>
+        </div>
+
+        <div class="question-card">
+            <div class="q-number">Question 12</div>
+            <div class="q-text">Jewelry such as rings and watches can be worn while handling food.</div>
+            <span class="q-answer false">❌ FALSE</span>
+            <div class="q-explanation">Jewelry <strong>harbors bacteria</strong> and can fall into food. Only plain wedding bands are sometimes permitted.</div>
+        </div>
+
+        <div class="question-card">
+            <div class="q-number">Question 13</div>
+            <div class="q-text">Food handlers should wash their hands for at least 10-15 seconds with soap.</div>
+            <span class="q-answer true">✅ TRUE</span>
+            <div class="q-explanation">Proper hand washing requires <strong>10-15 seconds</strong> of thorough lathering and rinsing.</div>
+        </div>
+
+        <div class="question-card">
+            <div class="q-number">Question 14</div>
+            <div class="q-text">You can handle food 24 hours after symptoms of diarrhea have stopped.</div>
+            <span class="q-answer false">❌ FALSE</span>
+            <div class="q-explanation">You must be symptom-free for <strong>48 hours (2 days)</strong> before returning to food handling.</div>
+        </div>
+
+        <div class="question-card">
+            <div class="q-number">Question 15</div>
+            <div class="q-text">Nail polish and artificial nails are allowed in food handling.</div>
+            <span class="q-answer false">❌ FALSE</span>
+            <div class="q-explanation">These can <strong>chip or harbor bacteria</strong>. Natural, short, clean nails are required.</div>
+        </div>
+
+        <div class="question-card">
+            <div class="q-number">Question 16</div>
+            <div class="q-text">Smoking is permitted in designated staff areas but requires hand washing before returning to food handling.</div>
+            <span class="q-answer true">✅ TRUE</span>
+            <div class="q-explanation">Hands must <strong>always be washed</strong> after smoking, eating, drinking, or using the toilet.</div>
+        </div>
+
+        <!-- CATEGORY 3: Temperature Control -->
+        <div class="category-header cat-temp">🌡️ Category 3: Temperature Control (Q17–Q24)</div>
+
+        <div class="question-card">
+            <div class="q-number">Question 17</div>
+            <div class="q-text">The danger zone for bacterial growth is between +6°C and +60°C.</div>
+            <span class="q-answer true">✅ TRUE</span>
+            <div class="q-explanation">Bacteria multiply rapidly in this range. Keep hot foods hot (<strong>≥+60°C</strong>) and cold foods cold (<strong>≤+6°C</strong>).</div>
+        </div>
+
+        <div class="question-card">
+            <div class="q-number">Question 18</div>
+            <div class="q-text">Hot food should be cooled to below +6°C within 6 hours.</div>
+            <span class="q-answer true">✅ TRUE</span>
+            <div class="q-explanation">The cooling process: <strong>+60°C → +21°C within 2 hours</strong>, then <strong>to +6°C within the next 4 hours</strong> (total 6 hours).</div>
+        </div>
+
+        <div class="question-card">
+            <div class="q-number">Question 19</div>
+            <div class="q-text">Frozen food can be safely thawed at room temperature.</div>
+            <span class="q-answer false">❌ FALSE</span>
+            <div class="q-explanation">Thawing should occur in a <strong>refrigerator (+6°C or below)</strong>, under cold running water, or in a microwave. Room temperature allows bacterial growth.</div>
+        </div>
+
+        <div class="question-card">
+            <div class="q-number">Question 20</div>
+            <div class="q-text">Refrigerators should maintain a temperature of +3°C to +6°C.</div>
+            <span class="q-answer true">✅ TRUE</span>
+            <div class="q-explanation">The optimal range is <strong>+3°C to +6°C</strong>. Temperatures above +6°C allow faster bacterial growth.</div>
+        </div>
+
+        <div class="question-card">
+            <div class="q-number">Question 21</div>
+            <div class="q-text">Hot holding equipment should keep food at a minimum of +60°C.</div>
+            <span class="q-answer true">✅ TRUE</span>
+            <div class="q-explanation"><strong>+60°C or above</strong> prevents bacterial growth in hot-held foods.</div>
+        </div>
+
+        <div class="question-card">
+            <div class="q-number">Question 22</div>
+            <div class="q-text">It is safe to reheat food multiple times if it is heated to over +70°C each time.</div>
+            <span class="q-answer false">❌ FALSE</span>
+            <div class="q-explanation">Food should only be <strong>reheated once</strong>. Repeated heating and cooling increases bacterial risk.</div>
+        </div>
+
+        <div class="question-card">
+            <div class="q-number">Question 23</div>
+            <div class="q-text">The core temperature of cooked poultry must reach at least +75°C.</div>
+            <span class="q-answer true">✅ TRUE</span>
+            <div class="q-explanation">Poultry requires <strong>+75°C</strong> to ensure harmful bacteria like Salmonella are killed.</div>
+        </div>
+
+        <div class="question-card">
+            <div class="q-number">Question 24</div>
+            <div class="q-text">Ice can be used to cool hot food quickly.</div>
+            <span class="q-answer true">✅ TRUE</span>
+            <div class="q-explanation"><strong>Ice baths or ice paddles</strong> are acceptable methods for rapid cooling.</div>
+        </div>
+
+        <!-- CATEGORY 4: Storage and Transport -->
+        <div class="category-header cat-storage">📦 Category 4: Storage and Transport (Q25–Q30)</div>
+
+        <div class="question-card">
+            <div class="q-number">Question 25</div>
+            <div class="q-text">Raw and cooked foods can be stored together if they are properly packaged.</div>
+            <span class="q-answer false">❌ FALSE</span>
+            <div class="q-explanation">Raw and ready-to-eat foods must <strong>always be stored separately</strong>, even when packaged, to prevent cross-contamination.</div>
+        </div>
+
+        <div class="question-card">
+            <div class="q-number">Question 26</div>
+            <div class="q-text">The FIFO principle (First In, First Out) should be used for food storage.</div>
+            <span class="q-answer true">✅ TRUE</span>
+            <div class="q-explanation"><strong>Older stock</strong> should be used before newer stock to prevent expiration and waste.</div>
+        </div>
+
+        <div class="question-card">
+            <div class="q-number">Question 27</div>
+            <div class="q-text">Dry goods should be stored at least 15 cm above the floor.</div>
+            <span class="q-answer true">✅ TRUE</span>
+            <div class="q-explanation">This prevents contamination from <strong>cleaning water, pests, and dirt</strong>.</div>
+        </div>
+
+        <div class="question-card">
+            <div class="q-number">Question 28</div>
+            <div class="q-text">Chemicals can be stored in the same area as food if they are on a separate shelf.</div>
+            <span class="q-answer false">❌ FALSE</span>
+            <div class="q-explanation">Chemicals must be stored <strong>completely separately</strong> from food, ideally in a locked cabinet.</div>
+        </div>
+
+        <div class="question-card">
+            <div class="q-number">Question 29</div>
+            <div class="q-text">During transport, cold foods must be kept below +6°C.</div>
+            <span class="q-answer true">✅ TRUE</span>
+            <div class="q-explanation">Temperature control must be maintained during <strong>all stages</strong>, including transport.</div>
+        </div>
+
+        <div class="question-card">
+            <div class="q-number">Question 30</div>
+            <div class="q-text">Food can be stored in unlabeled containers if you recognize the contents.</div>
+            <span class="q-answer false">❌ FALSE</span>
+            <div class="q-explanation">All food containers must be <strong>clearly labeled</strong> with contents and date information.</div>
+        </div>
+
+        <!-- CATEGORY 5: Cleaning and Disinfection -->
+        <div class="category-header cat-clean">🧹 Category 5: Cleaning and Disinfection (Q31–Q36)</div>
+
+        <div class="question-card">
+            <div class="q-number">Question 31</div>
+            <div class="q-text">Detergent alone is sufficient to disinfect surfaces.</div>
+            <span class="q-answer false">❌ FALSE</span>
+            <div class="q-explanation">Detergent cleans but does <strong>not disinfect</strong>. Disinfection requires approved sanitizers or heat.</div>
+        </div>
+
+        <div class="question-card">
+            <div class="q-number">Question 32</div>
+            <div class="q-text">Cleaning cloths should be changed daily or when visibly dirty.</div>
+            <span class="q-answer true">✅ TRUE</span>
+            <div class="q-explanation">Cloths harbor bacteria and should be <strong>changed frequently</strong>, preferably color-coded for different areas.</div>
+        </div>
+
+        <div class="question-card">
+            <div class="q-number">Question 33</div>
+            <div class="q-text">Color-coded cutting boards help prevent cross-contamination.</div>
+            <span class="q-answer true">✅ TRUE</span>
+            <div class="q-explanation">Different colors for <strong>raw meat, cooked foods, vegetables, and allergens</strong> prevent cross-contamination.</div>
+        </div>
+
+        <div class="question-card">
+            <div class="q-number">Question 34</div>
+            <div class="q-text">Hand disinfectant can replace hand washing when hands are visibly clean.</div>
+            <span class="q-answer false">❌ FALSE</span>
+            <div class="q-explanation">Hand washing with <strong>soap and water is always required</strong>. Disinfectant is an additional step, not a replacement.</div>
+        </div>
+
+        <div class="question-card">
+            <div class="q-number">Question 35</div>
+            <div class="q-text">Cleaning schedules should be documented and followed regularly.</div>
+            <span class="q-answer true">✅ TRUE</span>
+            <div class="q-explanation">Documentation ensures consistent cleaning and is part of <strong>self-monitoring requirements</strong>.</div>
+        </div>
+
+        <div class="question-card">
+            <div class="q-number">Question 36</div>
+            <div class="q-text">Floors should be cleaned during food preparation to maintain hygiene.</div>
+            <span class="q-answer false">❌ FALSE</span>
+            <div class="q-explanation">Floor cleaning should happen when <strong>food is covered or stored</strong> to prevent contamination from aerosols.</div>
+        </div>
+
+        <!-- CATEGORY 6: Work Methods and Legislation -->
+        <div class="category-header cat-law">⚖️ Category 6: Work Methods and Legislation (Q37–Q40)</div>
+
+        <div class="question-card">
+            <div class="q-number">Question 37</div>
+            <div class="q-text">A hygiene passport is legally required for anyone working with unpackaged food.</div>
+            <span class="q-answer true">✅ TRUE</span>
+            <div class="q-explanation">Finnish law requires a hygiene passport for handling <strong>unpackaged perishable foods</strong>.</div>
+        </div>
+
+        <div class="question-card">
+            <div class="q-number">Question 38</div>
+            <div class="q-text">Self-monitoring (HACCP) systems are mandatory in food businesses.</div>
+            <span class="q-answer true">✅ TRUE</span>
+            <div class="q-explanation">Food businesses must have documented <strong>self-monitoring systems based on HACCP principles</strong>.</div>
+        </div>
+
+        <div class="question-card">
+            <div class="q-number">Question 39</div>
+            <div class="q-text">Food handlers can taste food with their fingers during preparation.</div>
+            <span class="q-answer false">❌ FALSE</span>
+            <div class="q-explanation">Only <strong>clean utensils</strong> should be used for tasting. Fingers contaminate food.</div>
+        </div>
+
+        <div class="question-card">
+            <div class="q-number">Question 40</div>
+            <div class="q-text">If you suspect food is spoiled but are unsure, you should smell it to check.</div>
+            <span class="q-answer false">❌ FALSE</span>
+            <div class="q-explanation">Never taste or smell potentially spoiled food. <strong>When in doubt, throw it out.</strong></div>
+        </div>
+
+        <!-- KEY CONCEPTS -->
+        <div class="key-concepts">
+            <h2>📌 KEY CONCEPTS TO REMEMBER</h2>
+
+            <div class="concept-group">
+                <h3>🌡️ Critical Temperatures</h3>
+                <table class="temp-table">
+                    <tr><td>Hot holding</td><td>≥ +60°C</td></tr>
+                    <tr><td>Cold storage</td><td>+3°C to +6°C (max +6°C)</td></tr>
+                    <tr><td>Danger zone</td><td>+6°C to +60°C</td></tr>
+                    <tr><td>Cooking poultry</td><td>≥ +75°C core temperature</td></tr>
+                    <tr><td>Cooling process</td><td>+60°C → +21°C in 2h, then to +6°C in 4h</td></tr>
+                </table>
+            </div>
+
+            <div class="concept-group">
+                <h3>⚠️ High-Risk Foods</h3>
+                <ul>
+                    <li>Cooked rice (Bacillus cereus)</li>
+                    <li>Poultry (Campylobacter, Salmonella)</li>
+                    <li>Eggs (Salmonella)</li>
+                    <li>Sprouts</li>
+                    <li>Vacuum-packed foods (Listeria, botulism risk)</li>
+                </ul>
+            </div>
+
+            <div class="concept-group">
+                <h3>🧼 Hand Washing Required</h3>
+                <ul>
+                    <li>After using toilet</li>
+                    <li>After handling raw foods</li>
+                    <li>After breaks, smoking, eating</li>
+                    <li>After touching face, hair, or phone</li>
+                    <li>After cleaning</li>
+                    <li>After handling waste</li>
+                </ul>
+            </div>
+
+            <div class="concept-group">
+                <h3>🚫 Exclusion from Work (48 hours symptom-free)</h3>
+                <ul>
+                    <li>Diarrhea</li>
+                    <li>Vomiting</li>
+                    <li>Fever</li>
+                    <li>Skin infections (hands/arms)</li>
+                    <li>Jaundice</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>Hygieniapassi Practice Quiz — Study Guide</p>
+            <p style="margin-top:6px">💡 Print this page: <strong>Ctrl+P → Save as PDF</strong></p>
+        </div>
+    </div>
+</body>
+</html>
