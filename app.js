@@ -349,8 +349,34 @@ function reviewMistakes() {
 function showStudyGuide() {
     const container = document.getElementById('guideBody');
 
+    // PDF Download cards
+    let html = `
+    <div class="pdf-downloads">
+        <h3 style="font-size:.9rem;color:var(--t2);text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;font-weight:600">📄 Printable PDF Documents</h3>
+        <div class="pdf-cards">
+            <a href="study-guide.html" target="_blank" class="pdf-card">
+                <div class="pdf-icon">📋</div>
+                <div class="pdf-info">
+                    <div class="pdf-title">Complete Study Guide</div>
+                    <div class="pdf-desc">40 questions with explanations, temperature tables, key concepts & test day checklist</div>
+                </div>
+                <div class="pdf-action">Open →</div>
+            </a>
+            <a href="authentic-questions.html" target="_blank" class="pdf-card">
+                <div class="pdf-icon">✅</div>
+                <div class="pdf-info">
+                    <div class="pdf-title">Authenticated Question Bank</div>
+                    <div class="pdf-desc">58+ questions color-coded by authenticity (Official / Likely / Practice) with sources</div>
+                </div>
+                <div class="pdf-action">Open →</div>
+            </a>
+        </div>
+        <p style="font-size:.75rem;color:var(--t3);margin-top:10px;text-align:center">💡 Open a document, then press <strong style="color:var(--t2)">Ctrl+P → Save as PDF</strong> to download</p>
+    </div>
+    `;
+
     // Build study guide sections
-    let html = STUDY_GUIDE.map(section => `
+    html += STUDY_GUIDE.map(section => `
         <div class="guide-section">
             <div class="guide-section-header" onclick="this.parentElement.classList.toggle('open')">
                 <div class="guide-section-title">
