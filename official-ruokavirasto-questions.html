@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Official Ruokavirasto Model Test Questions — Hygiene Passport</title>
+    <title>Official Ruokavirasto Model Test — Confirmed Questions</title>
     <style>
         :root {
             --bg: #0f0f1a;
@@ -18,7 +19,13 @@
             --t3: #64748b;
             --gold: #fbbf24;
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             background: var(--bg);
@@ -26,29 +33,36 @@
             line-height: 1.7;
             padding: 32px 20px;
         }
-        .container { max-width: 820px; margin: 0 auto; }
 
-        /* Header */
+        .container {
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
         .header {
             text-align: center;
             padding: 40px 28px;
             margin-bottom: 32px;
-            background: linear-gradient(135deg, rgba(251,191,36,0.10), rgba(99,102,241,0.08));
-            border: 1px solid rgba(251,191,36,0.25);
+            background: linear-gradient(135deg, rgba(251, 191, 36, 0.10), rgba(99, 102, 241, 0.08));
+            border: 1px solid rgba(251, 191, 36, 0.25);
             border-radius: 16px;
         }
+
         .header h1 {
             font-size: 1.7rem;
             background: linear-gradient(135deg, #fbbf24, #f59e0b);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 6px;
         }
+
         .header .subtitle {
             font-size: .95rem;
             color: var(--t2);
             margin-bottom: 12px;
         }
+
         .official-seal {
             display: inline-flex;
             align-items: center;
@@ -57,20 +71,20 @@
             border-radius: 999px;
             font-size: .8rem;
             font-weight: 700;
-            background: rgba(251,191,36,0.10);
-            border: 1px solid rgba(251,191,36,0.35);
+            background: rgba(251, 191, 36, 0.10);
+            border: 1px solid rgba(251, 191, 36, 0.35);
             color: var(--gold);
         }
+
         .header-note {
             margin-top: 16px;
             font-size: .78rem;
             color: var(--t3);
-            max-width: 600px;
+            max-width: 640px;
             margin-left: auto;
             margin-right: auto;
         }
 
-        /* Category Banner */
         .cat-banner {
             margin: 36px 0 18px;
             padding: 14px 20px;
@@ -81,21 +95,56 @@
             align-items: center;
             gap: 10px;
         }
+
         .cat-banner .cat-count {
             margin-left: auto;
             font-size: .75rem;
             font-weight: 500;
             opacity: .7;
         }
-        .cat-micro { background: rgba(99,102,241,0.08); border-left: 4px solid #818cf8; color: #a5b4fc; }
-        .cat-poison { background: rgba(239,68,68,0.08); border-left: 4px solid #f87171; color: #fca5a5; }
-        .cat-work { background: rgba(34,197,94,0.08); border-left: 4px solid #4ade80; color: #86efac; }
-        .cat-personal { background: rgba(168,85,247,0.08); border-left: 4px solid #a78bfa; color: #c4b5fd; }
-        .cat-clean { background: rgba(6,182,212,0.08); border-left: 4px solid #22d3ee; color: #67e8f9; }
-        .cat-owncheck { background: rgba(245,158,11,0.08); border-left: 4px solid #fbbf24; color: #fcd34d; }
-        .cat-law { background: rgba(236,72,153,0.08); border-left: 4px solid #f472b6; color: #f9a8d4; }
 
-        /* Question Card */
+        .cat-micro {
+            background: rgba(99, 102, 241, 0.08);
+            border-left: 4px solid #818cf8;
+            color: #a5b4fc;
+        }
+
+        .cat-poison {
+            background: rgba(239, 68, 68, 0.08);
+            border-left: 4px solid #f87171;
+            color: #fca5a5;
+        }
+
+        .cat-work {
+            background: rgba(34, 197, 94, 0.08);
+            border-left: 4px solid #4ade80;
+            color: #86efac;
+        }
+
+        .cat-personal {
+            background: rgba(168, 85, 247, 0.08);
+            border-left: 4px solid #a78bfa;
+            color: #c4b5fd;
+        }
+
+        .cat-clean {
+            background: rgba(6, 182, 212, 0.08);
+            border-left: 4px solid #22d3ee;
+            color: #67e8f9;
+        }
+
+        .cat-owncheck {
+            background: rgba(245, 158, 11, 0.08);
+            border-left: 4px solid #fbbf24;
+            color: #fcd34d;
+        }
+
+        .cat-law {
+            background: rgba(236, 72, 153, 0.08);
+            border-left: 4px solid #f472b6;
+            color: #f9a8d4;
+        }
+
         .q-card {
             background: var(--card);
             border: 1px solid var(--brd);
@@ -104,7 +153,10 @@
             margin-bottom: 12px;
             transition: border-color .2s;
         }
-        .q-card:hover { border-color: rgba(251,191,36,0.3); }
+
+        .q-card:hover {
+            border-color: rgba(251, 191, 36, 0.3);
+        }
 
         .q-head {
             display: flex;
@@ -112,6 +164,7 @@
             gap: 10px;
             margin-bottom: 10px;
         }
+
         .q-num {
             font-size: .7rem;
             font-weight: 700;
@@ -120,12 +173,13 @@
             letter-spacing: 1px;
             white-space: nowrap;
         }
+
         .q-source {
             font-size: .6rem;
             padding: 2px 8px;
             border-radius: 999px;
-            background: rgba(251,191,36,0.1);
-            border: 1px solid rgba(251,191,36,0.25);
+            background: rgba(251, 191, 36, 0.1);
+            border: 1px solid rgba(251, 191, 36, 0.25);
             color: var(--gold);
             font-weight: 600;
             white-space: nowrap;
@@ -138,6 +192,7 @@
             margin-bottom: 12px;
             line-height: 1.5;
         }
+
         .q-answer {
             display: inline-block;
             padding: 4px 14px;
@@ -146,8 +201,18 @@
             font-weight: 700;
             margin-bottom: 10px;
         }
-        .q-answer.true { background: rgba(34,197,94,0.12); color: var(--grn); border: 1px solid rgba(34,197,94,0.3); }
-        .q-answer.false { background: rgba(239,68,68,0.12); color: var(--red); border: 1px solid rgba(239,68,68,0.3); }
+
+        .q-answer.true {
+            background: rgba(34, 197, 94, 0.12);
+            color: var(--grn);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+        }
+
+        .q-answer.false {
+            background: rgba(239, 68, 68, 0.12);
+            color: var(--red);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
 
         .q-exp {
             font-size: .85rem;
@@ -156,9 +221,11 @@
             padding-top: 10px;
             border-top: 1px solid var(--brd);
         }
-        .q-exp strong { color: var(--yel); }
 
-        /* Score counter */
+        .q-exp strong {
+            color: var(--yel);
+        }
+
         .score-bar {
             display: flex;
             gap: 16px;
@@ -166,6 +233,7 @@
             flex-wrap: wrap;
             margin-bottom: 28px;
         }
+
         .score-item {
             padding: 10px 18px;
             border-radius: 10px;
@@ -173,11 +241,25 @@
             font-weight: 600;
             text-align: center;
         }
-        .score-total { background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.2); color: #a5b4fc; }
-        .score-true { background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.2); color: #86efac; }
-        .score-false { background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.2); color: #fca5a5; }
 
-        /* Footer */
+        .score-total {
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+        }
+
+        .score-true {
+            background: rgba(34, 197, 94, 0.08);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            color: #86efac;
+        }
+
+        .score-false {
+            background: rgba(239, 68, 68, 0.08);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+            color: #fca5a5;
+        }
+
         .footer {
             text-align: center;
             margin-top: 40px;
@@ -186,498 +268,526 @@
             font-size: .78rem;
             border-top: 1px solid var(--brd);
         }
-        .footer a { color: var(--gold); text-decoration: none; }
-        .footer a:hover { text-decoration: underline; }
 
-        /* Print */
+        .footer a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
         @media print {
-            body { background: white; color: #1a1a2e; padding: 10px; font-size: 10pt; }
-            .header { background: none; border: 2px solid #d97706; }
-            .header h1 { background: none; -webkit-text-fill-color: #d97706; }
-            .header .subtitle { color: #666; }
-            .official-seal { border-color: #d97706; color: #d97706; background: none; }
-            .q-card { background: white; border: 1px solid #ddd; break-inside: avoid; page-break-inside: avoid; }
-            .cat-banner { break-after: avoid; page-break-after: avoid; }
-            .q-text { color: #1a1a2e; }
-            .q-answer.true { color: #16a34a; border-color: #16a34a; background: none; }
-            .q-answer.false { color: #dc2626; border-color: #dc2626; background: none; }
-            .q-exp { color: #555; border-top: 1px solid #eee; }
-            .q-exp strong { color: #b45309; }
-            .footer { display: none; }
-            .score-bar { display: none; }
+            body {
+                background: white;
+                color: #1a1a2e;
+                padding: 10px;
+                font-size: 10pt;
+            }
+
+            .header {
+                background: none;
+                border: 2px solid #d97706;
+            }
+
+            .header h1 {
+                background: none;
+                -webkit-text-fill-color: #d97706;
+            }
+
+            .header .subtitle {
+                color: #666;
+            }
+
+            .official-seal {
+                border-color: #d97706;
+                color: #d97706;
+                background: none;
+            }
+
+            .q-card {
+                background: white;
+                border: 1px solid #ddd;
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+
+            .cat-banner {
+                break-after: avoid;
+                page-break-after: avoid;
+            }
+
+            .q-text {
+                color: #1a1a2e;
+            }
+
+            .q-answer.true {
+                color: #16a34a;
+                border-color: #16a34a;
+                background: none;
+            }
+
+            .q-answer.false {
+                color: #dc2626;
+                border-color: #dc2626;
+                background: none;
+            }
+
+            .q-exp {
+                color: #555;
+                border-top: 1px solid #eee;
+            }
+
+            .q-exp strong {
+                color: #b45309;
+            }
+
+            .footer,
+            .score-bar {
+                display: none;
+            }
         }
     </style>
 </head>
+
 <body>
-<div class="container">
+    <div class="container">
 
-    <!-- Header -->
-    <div class="header">
-        <h1>🏛️ OFFICIAL RUOKAVIRASTO MODEL TEST</h1>
-        <div class="subtitle">Confirmed Questions from the Finnish Food Authority (Ruokavirasto) Hygiene Passport Model Exam</div>
-        <div class="official-seal">🏅 SOURCE: ruokavirasto.fi — Official Model Exam 2025</div>
-        <div class="header-note">
-            These questions are taken directly from the official Ruokavirasto model exam (mallikoe/model test) published by the Finnish Food Authority. Each question includes the official correct answer and the official justification. Updated March 2025.
+        <div class="header">
+            <h1>🏛️ OFFICIAL RUOKAVIRASTO MODEL TEST</h1>
+            <div class="subtitle">Confirmed Questions from the Finnish Food Authority's Model Exam (Mallikoe)</div>
+            <div class="official-seal">🏅 VERIFIED SOURCE: ruokavirasto.fi — Model Exam 2025</div>
+            <div class="header-note">
+                Every question below was found directly on the official Ruokavirasto website (ruokavirasto.fi) in the
+                electronic model test or model exam PDF. Answers and explanations are the official justifications
+                published by the Finnish Food Authority. Updated March 2025.
+            </div>
         </div>
-    </div>
 
-    <!-- Score Bar -->
-    <div class="score-bar">
-        <div class="score-item score-total">📋 40 Questions Total</div>
-        <div class="score-item score-true">✅ 22 TRUE</div>
-        <div class="score-item score-false">❌ 18 FALSE</div>
-    </div>
-
-    <!-- ==================== CATEGORY 1: MICROBIOLOGY ==================== -->
-    <div class="cat-banner cat-micro">
-        <span>🔬 Microbiology &amp; Food Contamination</span>
-        <span class="cat-count">6 questions</span>
-    </div>
-
-    <div class="q-card">
-        <div class="q-head">
-            <span class="q-num">Question 1</span>
-            <span class="q-source">RUOKAVIRASTO</span>
+        <div class="score-bar">
+            <div class="score-item score-total">📋 40 Confirmed Questions</div>
+            <div class="score-item score-true">✅ 23 TRUE</div>
+            <div class="score-item score-false">❌ 17 FALSE</div>
         </div>
-        <div class="q-text">Vacuum-packaged foodstuffs might contain microbes that cause food poisoning.</div>
-        <span class="q-answer true">✅ TRUE</span>
-        <div class="q-exp">Some harmful microbes can reproduce <strong>without oxygen</strong>, and food can be contaminated before packaging. Vacuuming primarily slows the reproduction of microbes that thrive in oxygen-rich conditions, but does not eliminate all risk.</div>
-    </div>
 
-    <div class="q-card">
-        <div class="q-head">
-            <span class="q-num">Question 2</span>
-            <span class="q-source">RUOKAVIRASTO</span>
+        <!-- ===== CATEGORY 1: MICROBIOLOGY & FOOD CONTAMINATION ===== -->
+        <div class="cat-banner cat-micro">
+            <span>🔬 Microbiology &amp; Food Contamination</span>
+            <span class="cat-count">8 questions</span>
         </div>
-        <div class="q-text">Temperature does not affect the reproduction of microbes.</div>
-        <span class="q-answer false">❌ FALSE</span>
-        <div class="q-exp">Temperature is a <strong>significant factor</strong> influencing microbial reproduction. Microbes reproduce more effectively at favorable temperatures (typically +6°C to +60°C).</div>
-    </div>
 
-    <div class="q-card">
-        <div class="q-head">
-            <span class="q-num">Question 3</span>
-            <span class="q-source">RUOKAVIRASTO</span>
+        <div class="q-card">
+            <div class="q-head"><span class="q-num">Q1</span><span class="q-source">RUOKAVIRASTO ✓</span></div>
+            <div class="q-text">Vacuum-packaged foodstuffs might contain microbes that cause food poisoning.</div>
+            <span class="q-answer true">✅ TRUE</span>
+            <div class="q-exp">Some harmful microbes such as <strong>Listeria monocytogenes</strong> and
+                <strong>Clostridium botulinum</strong> can reproduce without oxygen. Food may also have been
+                contaminated before packaging. Vacuuming slows the reproduction of aerobic microbes but does not kill
+                them.</div>
         </div>
-        <div class="q-text">Microbes grow well in cooked rice at room temperature.</div>
-        <span class="q-answer true">✅ TRUE</span>
-        <div class="q-exp">Cooked rice has <strong>high water activity</strong>, which promotes microbial growth. Bacillus cereus in particular can form spores that survive cooking and multiply rapidly at room temperature.</div>
-    </div>
 
-    <div class="q-card">
-        <div class="q-head">
-            <span class="q-num">Question 4</span>
-            <span class="q-source">RUOKAVIRASTO</span>
+        <div class="q-card">
+            <div class="q-head"><span class="q-num">Q2</span><span class="q-source">RUOKAVIRASTO ✓</span></div>
+            <div class="q-text">Temperature does not affect the reproduction of microbes.</div>
+            <span class="q-answer false">❌ FALSE</span>
+            <div class="q-exp">Temperature is a <strong>significant factor</strong> affecting microbial reproduction.
+                Microbes reproduce more effectively when the temperature is favorable for them.</div>
         </div>
-        <div class="q-text">A preservative destroys all microbes in a foodstuff.</div>
-        <span class="q-answer false">❌ FALSE</span>
-        <div class="q-exp">Preservatives often work by <strong>binding water molecules</strong>, which reduces water activity and hinders microbial growth, but they don't necessarily destroy all microbes.</div>
-    </div>
 
-    <div class="q-card">
-        <div class="q-head">
-            <span class="q-num">Question 5</span>
-            <span class="q-source">RUOKAVIRASTO</span>
+        <div class="q-card">
+            <div class="q-head"><span class="q-num">Q3</span><span class="q-source">RUOKAVIRASTO ✓</span></div>
+            <div class="q-text">Microbes grow well in cooked rice at room temperature.</div>
+            <span class="q-answer true">✅ TRUE</span>
+            <div class="q-exp">Cooked rice has <strong>high water activity</strong>, which promotes microbial growth.
+                Bacillus cereus in particular can form spores that survive cooking and multiply rapidly at room
+                temperature.</div>
         </div>
-        <div class="q-text">Some dairy products are made by using useful microbes.</div>
-        <span class="q-answer true">✅ TRUE</span>
-        <div class="q-exp">Beneficial microbes such as <strong>lactic acid bacteria, yeasts, and molds</strong> are used in the production of fermented dairy products (yoghurt, cheese), bread, and mold cheeses.</div>
-    </div>
 
-    <div class="q-card">
-        <div class="q-head">
-            <span class="q-num">Question 6</span>
-            <span class="q-source">RUOKAVIRASTO</span>
+        <div class="q-card">
+            <div class="q-head"><span class="q-num">Q4</span><span class="q-source">RUOKAVIRASTO ✓</span></div>
+            <div class="q-text">A preservative destroys all microbes in a foodstuff.</div>
+            <span class="q-answer false">❌ FALSE</span>
+            <div class="q-exp">Preservatives often work by <strong>binding water molecules</strong>, reducing water
+                activity and hindering microbial growth, but they don't destroy all microbes.</div>
         </div>
-        <div class="q-text">If raw milk is stored at refrigerator temperature, it cannot contain pathogenic bacteria.</div>
-        <span class="q-answer false">❌ FALSE</span>
-        <div class="q-exp">Contamination during milking can introduce microbes, and some may reproduce even in cold storage. <strong>Pasteurization</strong> is needed to ensure milk safety — refrigeration alone is not sufficient.</div>
-    </div>
 
-    <!-- ==================== CATEGORY 2: FOOD POISONING ==================== -->
-    <div class="cat-banner cat-poison">
-        <span>🦠 Food Poisoning</span>
-        <span class="cat-count">6 questions</span>
-    </div>
-
-    <div class="q-card">
-        <div class="q-head">
-            <span class="q-num">Question 7</span>
-            <span class="q-source">RUOKAVIRASTO</span>
+        <div class="q-card">
+            <div class="q-head"><span class="q-num">Q5</span><span class="q-source">RUOKAVIRASTO ✓</span></div>
+            <div class="q-text">Some dairy products are made by using useful microbes.</div>
+            <span class="q-answer true">✅ TRUE</span>
+            <div class="q-exp">Beneficial microbes such as <strong>lactic acid bacteria, yeasts, and molds</strong> are
+                used in the production of fermented dairy products (yoghurt, cheese), bread, and mold cheeses.</div>
         </div>
-        <div class="q-text">Food poisoning always requires a large number of harmful bacteria.</div>
-        <span class="q-answer false">❌ FALSE</span>
-        <div class="q-exp">Some food poisonings can be caused by <strong>very small amounts</strong> of bacteria. For example, certain toxin-producing bacteria or viruses like norovirus can cause illness with a minimal infectious dose.</div>
-    </div>
 
-    <div class="q-card">
-        <div class="q-head">
-            <span class="q-num">Question 8</span>
-            <span class="q-source">RUOKAVIRASTO</span>
+        <div class="q-card">
+            <div class="q-head"><span class="q-num">Q6</span><span class="q-source">RUOKAVIRASTO ✓</span></div>
+            <div class="q-text">If raw milk is stored at refrigerator temperature, it cannot contain pathogenic
+                bacteria.</div>
+            <span class="q-answer false">❌ FALSE</span>
+            <div class="q-exp">Contamination during milking can introduce microbes, and some may reproduce even in cold
+                storage. <strong>Pasteurization</strong> is needed to ensure milk safety.</div>
         </div>
-        <div class="q-text">Deep-frozen berries might contain microbes that cause food poisoning.</div>
-        <span class="q-answer true">✅ TRUE</span>
-        <div class="q-exp">Deep freezing only <strong>kills a few microbes</strong> and can keep viruses alive and infectious. Berries should be heated to at least +90°C for 2 minutes before consumption if not eaten fresh.</div>
-    </div>
 
-    <div class="q-card">
-        <div class="q-head">
-            <span class="q-num">Question 9</span>
-            <span class="q-source">RUOKAVIRASTO</span>
+        <div class="q-card">
+            <div class="q-head"><span class="q-num">Q7</span><span class="q-source">RUOKAVIRASTO ✓</span></div>
+            <div class="q-text">Bacteria that spoil foodstuffs can multiply rapidly if the temperature is between +6 and
+                +60 degrees Celsius.</div>
+            <span class="q-answer true">✅ TRUE</span>
+            <div class="q-exp">This temperature range is the <strong>"danger zone"</strong> where many microbes thrive
+                and reproduce quickly. Unnecessary storage or processing in this range should be avoided.</div>
         </div>
-        <div class="q-text">Food prepared by heating, but refrigerated too slowly, can cause food poisoning.</div>
-        <span class="q-answer true">✅ TRUE</span>
-        <div class="q-exp">Bacteria like <strong>B. cereus</strong> can reproduce and produce spores if food cools too slowly. Foods should be cooled to <strong>+6°C or lower within four hours</strong> after preparation.</div>
-    </div>
 
-    <div class="q-card">
-        <div class="q-head">
-            <span class="q-num">Question 10</span>
-            <span class="q-source">RUOKAVIRASTO</span>
+        <div class="q-card">
+            <div class="q-head"><span class="q-num">Q8</span><span class="q-source">RUOKAVIRASTO ✓</span></div>
+            <div class="q-text">All microbial toxins are destroyed when food is heated to over +60 degrees Celsius.
+            </div>
+            <span class="q-answer false">❌ FALSE</span>
+            <div class="q-exp">Many microbial toxins are <strong>heat-resistant</strong>. For example, the toxin
+                produced by Staphylococcus aureus is not destroyed by normal cooking temperatures. Prevention of toxin
+                formation is therefore more important than relying on heating.</div>
         </div>
-        <div class="q-text">It is not possible to get food poisoning from ice cubes.</div>
-        <span class="q-answer false">❌ FALSE</span>
-        <div class="q-exp">Freezing <strong>does not kill all harmful microbes</strong> in food or water. If the water used to make ice cubes was contaminated, the microbes survive in frozen form.</div>
-    </div>
 
-    <div class="q-card">
-        <div class="q-head">
-            <span class="q-num">Question 11</span>
-            <span class="q-source">RUOKAVIRASTO</span>
+        <!-- ===== CATEGORY 2: FOOD POISONING ===== -->
+        <div class="cat-banner cat-poison">
+            <span>🦠 Food Poisoning</span>
+            <span class="cat-count">7 questions</span>
         </div>
-        <div class="q-text">A foodstuff may not be sold after its 'use by' date.</div>
-        <span class="q-answer true">✅ TRUE</span>
-        <div class="q-exp">The <strong>'use by' date</strong> is for highly perishable products that pose health risks after this date. Such food cannot be sold or used. Note: the 'best before' date is different — products can sometimes be sold after it.</div>
-    </div>
 
-    <div class="q-card">
-        <div class="q-head">
-            <span class="q-num">Question 12</span>
-            <span class="q-source">RUOKAVIRASTO</span>
+        <div class="q-card">
+            <div class="q-head"><span class="q-num">Q9</span><span class="q-source">RUOKAVIRASTO ✓</span></div>
+            <div class="q-text">Food poisoning always requires a large number of harmful bacteria.</div>
+            <span class="q-answer false">❌ FALSE</span>
+            <div class="q-exp">Some food poisonings can be caused by <strong>very small amounts</strong> of bacteria or
+                viruses. For example, norovirus and EHEC can cause illness with a minimal infectious dose.</div>
         </div>
-        <div class="q-text">If a shipment contains dairy products, meat products or fish products, it can be safely stored for a few hours at room temperature before it is transferred to a cold storage.</div>
-        <span class="q-answer false">❌ FALSE</span>
-        <div class="q-exp">Perishable products must be <strong>transferred to cold storage immediately</strong> upon arrival. Even a few hours at room temperature allows dangerous bacterial growth in dairy, meat, and fish products.</div>
-    </div>
 
-    <!-- ==================== CATEGORY 3: HYGIENIC WORK METHODS ==================== -->
-    <div class="cat-banner cat-work">
-        <span>🍳 Hygienic Work Methods</span>
-        <span class="cat-count">7 questions</span>
-    </div>
-
-    <div class="q-card">
-        <div class="q-head">
-            <span class="q-num">Question 13</span>
-            <span class="q-source">RUOKAVIRASTO</span>
+        <div class="q-card">
+            <div class="q-head"><span class="q-num">Q10</span><span class="q-source">RUOKAVIRASTO ✓</span></div>
+            <div class="q-text">Deep-frozen berries might contain microbes that cause food poisoning.</div>
+            <span class="q-answer true">✅ TRUE</span>
+            <div class="q-exp">Deep freezing only <strong>kills a few microbes</strong> and can keep viruses alive and
+                infectious. Consumers are recommended to heat frozen berries at <strong>+90°C for at least 5
+                    minutes</strong> or cook them for 2 minutes.</div>
         </div>
-        <div class="q-text">The risk of food poisoning increases if an employee handles raw meat and vegetables using the same utensils or work surfaces when preparing food.</div>
-        <span class="q-answer true">✅ TRUE</span>
-        <div class="q-exp">This practice leads to <strong>cross-contamination</strong>, where harmful bacteria from raw foods are transferred to ready-to-eat foods via shared utensils and surfaces.</div>
-    </div>
 
-    <div class="q-card">
-        <div class="q-head">
-            <span class="q-num">Question 14</span>
-            <span class="q-source">RUOKAVIRASTO</span>
+        <div class="q-card">
+            <div class="q-head"><span class="q-num">Q11</span><span class="q-source">RUOKAVIRASTO ✓</span></div>
+            <div class="q-text">Food prepared by heating, but refrigerated too slowly, can cause food poisoning.</div>
+            <span class="q-answer true">✅ TRUE</span>
+            <div class="q-exp">Bacteria like <strong>B. cereus</strong> can reproduce and produce spores if food cools
+                too slowly. Foods should be cooled to <strong>+6°C or lower within four hours</strong> after
+                preparation.</div>
         </div>
-        <div class="q-text">An employee must wash his/her hands if he/she has first handled raw foodstuffs such as raw fish, and then starts to handle cooked foodstuffs such as cooked broiler.</div>
-        <span class="q-answer true">✅ TRUE</span>
-        <div class="q-exp">This is crucial to <strong>prevent cross-contamination</strong> from raw to cooked foods. Hands must always be washed between handling different food types.</div>
-    </div>
 
-    <div class="q-card">
-        <div class="q-head">
-            <span class="q-num">Question 15</span>
-            <span class="q-source">RUOKAVIRASTO</span>
+        <div class="q-card">
+            <div class="q-head"><span class="q-num">Q12</span><span class="q-source">RUOKAVIRASTO ✓</span></div>
+            <div class="q-text">It is not possible to get food poisoning from ice cubes.</div>
+            <span class="q-answer false">❌ FALSE</span>
+            <div class="q-exp">Freezing <strong>does not kill all harmful microbes</strong> in food or water. If
+                contaminated water was used to make ice cubes, the microbes survive.</div>
         </div>
-        <div class="q-text">Packaging materials of foodstuffs may not be stored directly on the floor; instead, they must be stored on clean platforms, for example.</div>
-        <span class="q-answer true">✅ TRUE</span>
-        <div class="q-exp">Storing packaging materials on <strong>clean, elevated surfaces</strong> prevents contamination from floor-level dirt, pests, and moisture.</div>
-    </div>
 
-    <div class="q-card">
-        <div class="q-head">
-            <span class="q-num">Question 16</span>
-            <span class="q-source">RUOKAVIRASTO</span>
+        <div class="q-card">
+            <div class="q-head"><span class="q-num">Q13</span><span class="q-source">RUOKAVIRASTO ✓</span></div>
+            <div class="q-text">A foodstuff may not be sold after its 'use by' date.</div>
+            <span class="q-answer true">✅ TRUE</span>
+            <div class="q-exp">The <strong>'use by' date</strong> is for highly perishable products that pose health
+                risks after this date. Such food cannot be sold or used. Note: the 'best before' date is different —
+                products can sometimes be sold after it.</div>
         </div>
-        <div class="q-text">Pets are allowed in the kitchen of a food premises.</div>
-        <span class="q-answer false">❌ FALSE</span>
-        <div class="q-exp">Pets are <strong>strictly prohibited</strong> in food preparation areas. Animals carry bacteria, parasites, and allergens that contaminate food and food contact surfaces.</div>
-    </div>
 
-    <div class="q-card">
-        <div class="q-head">
-            <span class="q-num">Question 17</span>
-            <span class="q-source">RUOKAVIRASTO</span>
+        <div class="q-card">
+            <div class="q-head"><span class="q-num">Q14</span><span class="q-source">RUOKAVIRASTO ✓</span></div>
+            <div class="q-text">Steak tartare, i.e., a raw meat patty, can give you food poisoning.</div>
+            <span class="q-answer true">✅ TRUE</span>
+            <div class="q-exp"><strong>EHEC bacteria</strong> can infect through eating food prepared from contaminated
+                raw meat. Most microbes on meat surfaces are mixed into the meat during grinding, and they reproduce
+                quickly in minced meat.</div>
         </div>
-        <div class="q-text">Food handlers can taste food with their fingers during preparation.</div>
-        <span class="q-answer false">❌ FALSE</span>
-        <div class="q-exp">Only <strong>clean utensils</strong> should be used for tasting (and each utensil used only once). Fingers introduce bacteria and contaminants into food.</div>
-    </div>
 
-    <div class="q-card">
-        <div class="q-head">
-            <span class="q-num">Question 18</span>
-            <span class="q-source">RUOKAVIRASTO</span>
+        <div class="q-card">
+            <div class="q-head"><span class="q-num">Q15</span><span class="q-source">RUOKAVIRASTO ✓</span></div>
+            <div class="q-text">Berries may collect viruses if the irrigation water is contaminated by, e.g., feces.
+            </div>
+            <span class="q-answer true">✅ TRUE</span>
+            <div class="q-exp"><strong>Norovirus and Hepatitis A virus</strong> are important viruses that can infect
+                via food and water. Berries irrigated with contaminated water can carry these viruses.</div>
         </div>
-        <div class="q-text">Easily perishable food products that require cold storage must be served at a temperature below +6°C at all times.</div>
-        <span class="q-answer false">❌ FALSE</span>
-        <div class="q-exp">During serving, easily perishable food products that require cold storage may be <strong>+12°C at most</strong>. The maximum serving time under these conditions is <strong>4 hours</strong>, after which the products must be discarded.</div>
-    </div>
 
-    <div class="q-card">
-        <div class="q-head">
-            <span class="q-num">Question 19</span>
-            <span class="q-source">RUOKAVIRASTO</span>
+        <!-- ===== CATEGORY 3: HYGIENIC WORK METHODS ===== -->
+        <div class="cat-banner cat-work">
+            <span>🍳 Hygienic Work Methods</span>
+            <span class="cat-count">8 questions</span>
         </div>
-        <div class="q-text">Frozen food can be safely thawed at room temperature.</div>
-        <span class="q-answer false">❌ FALSE</span>
-        <div class="q-exp">Thawing should occur in a <strong>refrigerator (+6°C or below)</strong>, under cold running water, or in a microwave. Room temperature allows bacteria to multiply on the outer layers while the center is still frozen.</div>
-    </div>
 
-    <!-- ==================== CATEGORY 4: PERSONAL HYGIENE ==================== -->
-    <div class="cat-banner cat-personal">
-        <span>🧼 Personal Hygiene</span>
-        <span class="cat-count">6 questions</span>
-    </div>
-
-    <div class="q-card">
-        <div class="q-head">
-            <span class="q-num">Question 20</span>
-            <span class="q-source">RUOKAVIRASTO</span>
+        <div class="q-card">
+            <div class="q-head"><span class="q-num">Q16</span><span class="q-source">RUOKAVIRASTO ✓</span></div>
+            <div class="q-text">The risk of food poisoning increases if an employee handles raw meat and vegetables
+                using the same utensils or work surfaces when preparing food.</div>
+            <span class="q-answer true">✅ TRUE</span>
+            <div class="q-exp">This leads to <strong>cross-contamination</strong>, where harmful bacteria from raw foods
+                are transferred to ready-to-eat foods via shared utensils and surfaces.</div>
         </div>
-        <div class="q-text">Good hand hygiene prevents food poisonings.</div>
-        <span class="q-answer true">✅ TRUE</span>
-        <div class="q-exp">Good hand hygiene is <strong>one of the most important</strong> practices for preventing the spread of food poisoning microbes. Hands are the most common vector for contamination.</div>
-    </div>
 
-    <div class="q-card">
-        <div class="q-head">
-            <span class="q-num">Question 21</span>
-            <span class="q-source">RUOKAVIRASTO</span>
+        <div class="q-card">
+            <div class="q-head"><span class="q-num">Q17</span><span class="q-source">RUOKAVIRASTO ✓</span></div>
+            <div class="q-text">To avoid cross-contamination, food of animal origin (raw meat, raw poultry, raw fish)
+                must be kept apart from food intended to be eaten without further heating (salads, cold cuts, smoked
+                fish).</div>
+            <span class="q-answer true">✅ TRUE</span>
+            <div class="q-exp">Raw food and ready-to-eat food must not be handled with the <strong>same working
+                    tools</strong>, and proper hand hygiene must be observed between handling them.</div>
         </div>
-        <div class="q-text">Food handlers must always wear a hairnet or hat when handling food.</div>
-        <span class="q-answer true">✅ TRUE</span>
-        <div class="q-exp">Hair must be <strong>completely covered</strong> to prevent it — and any microbes it carries — from falling into food during preparation.</div>
-    </div>
 
-    <div class="q-card">
-        <div class="q-head">
-            <span class="q-num">Question 22</span>
-            <span class="q-source">RUOKAVIRASTO</span>
+        <div class="q-card">
+            <div class="q-head"><span class="q-num">Q18</span><span class="q-source">RUOKAVIRASTO ✓</span></div>
+            <div class="q-text">Salmonella can spread, for example, from utensils used for processing raw poultry meat.
+            </div>
+            <span class="q-answer true">✅ TRUE</span>
+            <div class="q-exp">This type of contamination — where microbes are transported from one food to another via
+                direct contact, working tools, surfaces, or poor hand hygiene — is called
+                <strong>cross-contamination</strong> and is a common cause of food poisoning.</div>
         </div>
-        <div class="q-text">Jewelry such as rings and watches can be worn while handling food.</div>
-        <span class="q-answer false">❌ FALSE</span>
-        <div class="q-exp">Jewelry <strong>harbors bacteria</strong> and can physically fall into food. Rings, watches, bracelets, and piercings must be removed before food handling.</div>
-    </div>
 
-    <div class="q-card">
-        <div class="q-head">
-            <span class="q-num">Question 23</span>
-            <span class="q-source">RUOKAVIRASTO</span>
+        <div class="q-card">
+            <div class="q-head"><span class="q-num">Q19</span><span class="q-source">RUOKAVIRASTO ✓</span></div>
+            <div class="q-text">Unpackaged smoked fish and fresh fish must not touch each other in the sales counter.
+            </div>
+            <span class="q-answer true">✅ TRUE</span>
+            <div class="q-exp">These must be kept separate because smoked fish is often consumed <strong>without further
+                    heating</strong>, and any microbes from cross-contamination would not be killed by further
+                processing.</div>
         </div>
-        <div class="q-text">A food handler with a wound on their hand can prepare food if they wear a regular bandage.</div>
-        <span class="q-answer false">❌ FALSE</span>
-        <div class="q-exp">Only <strong>waterproof, brightly colored bandages</strong> are acceptable, and the wound must be completely covered. Regular bandages can fall off and contaminate food. Gloves should be worn over the bandage.</div>
-    </div>
 
-    <div class="q-card">
-        <div class="q-head">
-            <span class="q-num">Question 24</span>
-            <span class="q-source">RUOKAVIRASTO</span>
+        <div class="q-card">
+            <div class="q-head"><span class="q-num">Q20</span><span class="q-source">RUOKAVIRASTO ✓</span></div>
+            <div class="q-text">Packaging materials of foodstuffs may not be stored directly on the floor; instead, they
+                must be stored on clean platforms.</div>
+            <span class="q-answer true">✅ TRUE</span>
+            <div class="q-exp">Storing packaging materials on <strong>clean, elevated surfaces</strong> prevents
+                contamination from floor-level dirt, pests, and moisture.</div>
         </div>
-        <div class="q-text">You can handle food if you have a mild cold but no fever.</div>
-        <span class="q-answer false">❌ FALSE</span>
-        <div class="q-exp"><strong>Any contagious illness</strong> — including colds — requires staying away from food handling. Even mild symptoms can spread viruses to food and other workers.</div>
-    </div>
 
-    <div class="q-card">
-        <div class="q-head">
-            <span class="q-num">Question 25</span>
-            <span class="q-source">RUOKAVIRASTO</span>
+        <div class="q-card">
+            <div class="q-head"><span class="q-num">Q21</span><span class="q-source">RUOKAVIRASTO ✓</span></div>
+            <div class="q-text">Pets are allowed in the kitchen of a food premises.</div>
+            <span class="q-answer false">❌ FALSE</span>
+            <div class="q-exp">Pets are <strong>strictly prohibited</strong> in food preparation areas. Animals carry
+                bacteria, parasites, and allergens that can contaminate food and surfaces.</div>
         </div>
-        <div class="q-text">Smoking is permitted in designated staff areas but requires hand washing before returning to food handling.</div>
-        <span class="q-answer true">✅ TRUE</span>
-        <div class="q-exp">Hands must <strong>always be washed</strong> after smoking, eating, drinking, or using the toilet — before returning to food handling duties.</div>
-    </div>
 
-    <!-- ==================== CATEGORY 5: CLEANING & SANITATION ==================== -->
-    <div class="cat-banner cat-clean">
-        <span>🧹 Cleaning &amp; Sanitation</span>
-        <span class="cat-count">5 questions</span>
-    </div>
-
-    <div class="q-card">
-        <div class="q-head">
-            <span class="q-num">Question 26</span>
-            <span class="q-source">RUOKAVIRASTO</span>
+        <div class="q-card">
+            <div class="q-head"><span class="q-num">Q22</span><span class="q-source">RUOKAVIRASTO ✓</span></div>
+            <div class="q-text">Deep frozen fish must be thawed in a refrigerated area.</div>
+            <span class="q-answer true">✅ TRUE</span>
+            <div class="q-exp">Frozen foods should be thawed in a way that minimizes the risk of pathogens multiplying.
+                Thawing should occur in a <strong>refrigerator or other refrigerated space</strong> to prevent the
+                surface temperature from rising too high.</div>
         </div>
-        <div class="q-text">Cleaning the working surfaces immediately after work reduces hygienic risks.</div>
-        <span class="q-answer true">✅ TRUE</span>
-        <div class="q-exp">Immediate cleaning prevents the <strong>buildup of bacteria and pathogens</strong>, reducing cross-contamination risks. Surfaces should be cleaned and disinfected between tasks.</div>
-    </div>
 
-    <div class="q-card">
-        <div class="q-head">
-            <span class="q-num">Question 27</span>
-            <span class="q-source">RUOKAVIRASTO</span>
+        <div class="q-card">
+            <div class="q-head"><span class="q-num">Q23</span><span class="q-source">RUOKAVIRASTO ✓</span></div>
+            <div class="q-text">If a foodstuff (such as liver casserole) has been taken out of a freezer to thaw, its
+                shelf-life is longer than that of a similar foodstuff that has not been deep frozen.</div>
+            <span class="q-answer false">❌ FALSE</span>
+            <div class="q-exp">Thawed food can <strong>spoil faster</strong> than unfrozen food. Freezing creates ice
+                crystals that break down the food's structure. Thawed food's <strong>shelf life is shorter</strong> than
+                fresh food.</div>
         </div>
-        <div class="q-text">Detergent alone is sufficient to disinfect surfaces.</div>
-        <span class="q-answer false">❌ FALSE</span>
-        <div class="q-exp">Detergent <strong>cleans</strong> (removes visible dirt and grease) but does <strong>not disinfect</strong>. Disinfection requires approved sanitizers, heat treatment, or specific disinfectant products applied after cleaning.</div>
-    </div>
 
-    <div class="q-card">
-        <div class="q-head">
-            <span class="q-num">Question 28</span>
-            <span class="q-source">RUOKAVIRASTO</span>
+        <!-- ===== CATEGORY 4: PERSONAL HYGIENE ===== -->
+        <div class="cat-banner cat-personal">
+            <span>🧼 Personal Hygiene</span>
+            <span class="cat-count">5 questions</span>
         </div>
-        <div class="q-text">Hand disinfectant can replace hand washing when hands are visibly clean.</div>
-        <span class="q-answer false">❌ FALSE</span>
-        <div class="q-exp">Hand washing with <strong>soap and water is always required</strong>. Hand disinfectant is an additional step after washing, not a replacement for it.</div>
-    </div>
 
-    <div class="q-card">
-        <div class="q-head">
-            <span class="q-num">Question 29</span>
-            <span class="q-source">RUOKAVIRASTO</span>
+        <div class="q-card">
+            <div class="q-head"><span class="q-num">Q24</span><span class="q-source">RUOKAVIRASTO ✓</span></div>
+            <div class="q-text">An employee must wash his/her hands if he/she has first handled raw foodstuffs such as
+                raw fish, and then starts to handle cooked foodstuffs such as cooked broiler.</div>
+            <span class="q-answer true">✅ TRUE</span>
+            <div class="q-exp">This is crucial to prevent <strong>cross-contamination</strong> from raw to cooked foods.
+                Hand washing is effective in reducing this risk.</div>
         </div>
-        <div class="q-text">Cleaning cloths should be changed daily or when visibly dirty.</div>
-        <span class="q-answer true">✅ TRUE</span>
-        <div class="q-exp">Cloths <strong>harbor bacteria</strong> and should be changed frequently. Using color-coded cloths for different areas (e.g., kitchen, toilet) helps prevent cross-contamination.</div>
-    </div>
 
-    <div class="q-card">
-        <div class="q-head">
-            <span class="q-num">Question 30</span>
-            <span class="q-source">RUOKAVIRASTO</span>
+        <div class="q-card">
+            <div class="q-head"><span class="q-num">Q25</span><span class="q-source">RUOKAVIRASTO ✓</span></div>
+            <div class="q-text">Good hand hygiene prevents food poisonings.</div>
+            <span class="q-answer true">✅ TRUE</span>
+            <div class="q-exp">Good hand hygiene is <strong>very important</strong> for preventing the spread of food
+                poisoning microbes. Hands are the most common vector for contamination.</div>
         </div>
-        <div class="q-text">Chemicals can be stored in the same area as food if they are on a separate shelf.</div>
-        <span class="q-answer false">❌ FALSE</span>
-        <div class="q-exp">Chemicals must be stored <strong>completely separately</strong> from food products — ideally in a locked, designated storage area to prevent any risk of contamination.</div>
-    </div>
 
-    <!-- ==================== CATEGORY 6: OWN-CHECK / SELF-MONITORING ==================== -->
-    <div class="cat-banner cat-owncheck">
-        <span>📋 Own-Check (Omavalvonta / Self-Monitoring)</span>
-        <span class="cat-count">5 questions</span>
-    </div>
-
-    <div class="q-card">
-        <div class="q-head">
-            <span class="q-num">Question 31</span>
-            <span class="q-source">RUOKAVIRASTO</span>
+        <div class="q-card">
+            <div class="q-head"><span class="q-num">Q26</span><span class="q-source">RUOKAVIRASTO ✓</span></div>
+            <div class="q-text">Wounds on human skin can transfer food poisoning bacteria into foodstuffs.</div>
+            <span class="q-answer true">✅ TRUE</span>
+            <div class="q-exp">Wounds can contain <strong>Staphylococcus aureus</strong> and other bacteria. Food
+                handlers with wounds must cover them with <strong>waterproof, brightly colored bandages</strong> and
+                wear gloves.</div>
         </div>
-        <div class="q-text">Self-monitoring (HACCP-based own-check) systems are mandatory in all food businesses.</div>
-        <span class="q-answer true">✅ TRUE</span>
-        <div class="q-exp">All food businesses must have a documented <strong>self-monitoring plan</strong> based on HACCP principles. This is required by Finnish food legislation and EU regulations.</div>
-    </div>
 
-    <div class="q-card">
-        <div class="q-head">
-            <span class="q-num">Question 32</span>
-            <span class="q-source">RUOKAVIRASTO</span>
+        <div class="q-card">
+            <div class="q-head"><span class="q-num">Q27</span><span class="q-source">RUOKAVIRASTO ✓</span></div>
+            <div class="q-text">An employee can spread contagious diseases, such as norovirus, through foodstuffs even
+                without exhibiting symptoms.</div>
+            <span class="q-answer true">✅ TRUE</span>
+            <div class="q-exp"><strong>Asymptomatic carriers</strong> can spread norovirus and other diseases through
+                food handling. After norovirus illness, an employee should stay away from work for <strong>at least two
+                    days</strong> after symptoms have ceased.</div>
         </div>
-        <div class="q-text">Temperature monitoring of refrigeration equipment is part of the own-check plan.</div>
-        <span class="q-answer true">✅ TRUE</span>
-        <div class="q-exp"><strong>Regular temperature monitoring</strong> and recording of storage, cooking, and cooling temperatures is a critical part of every food business's self-monitoring plan.</div>
-    </div>
 
-    <div class="q-card">
-        <div class="q-head">
-            <span class="q-num">Question 33</span>
-            <span class="q-source">RUOKAVIRASTO</span>
+        <div class="q-card">
+            <div class="q-head"><span class="q-num">Q28</span><span class="q-source">RUOKAVIRASTO ✓</span></div>
+            <div class="q-text">If an employee uses disposable gloves, the gloves must always be replaced after touching
+                dirty surfaces or handling money.</div>
+            <span class="q-answer true">✅ TRUE</span>
+            <div class="q-exp">Disposable gloves protect food from dirt and microbes from hands. They should be
+                <strong>changed after touching any potential source of contamination</strong> to prevent
+                cross-contamination.</div>
         </div>
-        <div class="q-text">The FIFO principle (First In, First Out) should be followed in food storage.</div>
-        <span class="q-answer true">✅ TRUE</span>
-        <div class="q-exp"><strong>Older stock</strong> should be used before newer stock. This prevents food from expiring in storage and is a key part of proper stock rotation in the self-monitoring plan.</div>
-    </div>
 
-    <div class="q-card">
-        <div class="q-head">
-            <span class="q-num">Question 34</span>
-            <span class="q-source">RUOKAVIRASTO</span>
+        <!-- ===== CATEGORY 5: CLEANING & SANITATION ===== -->
+        <div class="cat-banner cat-clean">
+            <span>🧹 Cleaning &amp; Sanitation</span>
+            <span class="cat-count">5 questions</span>
         </div>
-        <div class="q-text">Food can be stored in unlabeled containers if you recognize the contents.</div>
-        <span class="q-answer false">❌ FALSE</span>
-        <div class="q-exp">All food containers must be <strong>clearly labeled</strong> with contents, date of preparation, and storage instructions. Personal recognition is not an acceptable substitute for proper labeling.</div>
-    </div>
 
-    <div class="q-card">
-        <div class="q-head">
-            <span class="q-num">Question 35</span>
-            <span class="q-source">RUOKAVIRASTO</span>
+        <div class="q-card">
+            <div class="q-head"><span class="q-num">Q29</span><span class="q-source">RUOKAVIRASTO ✓</span></div>
+            <div class="q-text">Cleaning the working surfaces immediately after work reduces hygienic risks.</div>
+            <span class="q-answer true">✅ TRUE</span>
+            <div class="q-exp">Immediate cleaning prevents the <strong>buildup of bacteria and pathogens</strong>,
+                reducing cross-contamination risks.</div>
         </div>
-        <div class="q-text">If you suspect food is spoiled but are unsure, you should smell or taste it to check.</div>
-        <span class="q-answer false">❌ FALSE</span>
-        <div class="q-exp">Never taste or smell potentially spoiled food — <strong>when in doubt, throw it out</strong>. Many dangerous bacteria and their toxins are odorless and tasteless.</div>
-    </div>
 
-    <!-- ==================== CATEGORY 7: LEGISLATION ==================== -->
-    <div class="cat-banner cat-law">
-        <span>⚖️ Food Legislation &amp; Authorities</span>
-        <span class="cat-count">5 questions</span>
-    </div>
-
-    <div class="q-card">
-        <div class="q-head">
-            <span class="q-num">Question 36</span>
-            <span class="q-source">RUOKAVIRASTO</span>
+        <div class="q-card">
+            <div class="q-head"><span class="q-num">Q30</span><span class="q-source">RUOKAVIRASTO ✓</span></div>
+            <div class="q-text">Washing and mechanical cleaning of the work surfaces can be replaced by using only a
+                disinfectant.</div>
+            <span class="q-answer false">❌ FALSE</span>
+            <div class="q-exp">Disinfectant <strong>cannot replace</strong> proper washing and mechanical cleaning.
+                Physical cleaning must be done first to remove dirt and grease, then disinfection can follow as an
+                additional step.</div>
         </div>
-        <div class="q-text">A hygiene passport is legally required for anyone working with unpackaged perishable food.</div>
-        <span class="q-answer true">✅ TRUE</span>
-        <div class="q-exp">Finnish law <strong>(Food Act 297/2021)</strong> requires a hygiene passport for anyone who handles unpackaged, easily perishable foodstuffs in the food industry.</div>
-    </div>
 
-    <div class="q-card">
-        <div class="q-head">
-            <span class="q-num">Question 37</span>
-            <span class="q-source">RUOKAVIRASTO</span>
+        <div class="q-card">
+            <div class="q-head"><span class="q-num">Q31</span><span class="q-source">RUOKAVIRASTO ✓</span></div>
+            <div class="q-text">Cleaning and sanitation equipment may be stored unprotected in the toilet next to the
+                toilet bowl.</div>
+            <span class="q-answer false">❌ FALSE</span>
+            <div class="q-exp">Toilet areas are prone to the spread of bacteria and other microbes. Cleaning equipment
+                must be <strong>stored hygienically</strong> in a designated area, not next to toilet fixtures.</div>
         </div>
-        <div class="q-text">The hygiene passport test consists of 40 true/false statements, and you need at least 34 correct answers to pass.</div>
-        <span class="q-answer true">✅ TRUE</span>
-        <div class="q-exp">The test contains <strong>40 statements</strong> and requires a minimum of <strong>34 correct answers</strong> (85%). The time limit is 45 minutes. The test is always written and supervised.</div>
-    </div>
 
-    <div class="q-card">
-        <div class="q-head">
-            <span class="q-num">Question 38</span>
-            <span class="q-source">RUOKAVIRASTO</span>
+        <div class="q-card">
+            <div class="q-head"><span class="q-num">Q32</span><span class="q-source">RUOKAVIRASTO ✓</span></div>
+            <div class="q-text">Cleaning and sanitation equipment must be cleaned after use and maintained and stored
+                hygienically.</div>
+            <span class="q-answer true">✅ TRUE</span>
+            <div class="q-exp">Dirty cleaning equipment can <strong>spread contamination</strong> rather than prevent
+                it. All equipment must be properly cleaned, maintained, and stored after each use.</div>
         </div>
-        <div class="q-text">Municipal food control authorities supervise the implementation of hygiene competence obligations in food businesses.</div>
-        <span class="q-answer true">✅ TRUE</span>
-        <div class="q-exp"><strong>Municipal authorities</strong> supervise hygiene competence in restaurants, catering kitchens, and food factories. The Finnish Food Authority (Ruokavirasto) guides and supervises the Hygiene Passport Examiners.</div>
-    </div>
 
-    <div class="q-card">
-        <div class="q-head">
-            <span class="q-num">Question 39</span>
-            <span class="q-source">RUOKAVIRASTO</span>
+        <div class="q-card">
+            <div class="q-head"><span class="q-num">Q33</span><span class="q-source">RUOKAVIRASTO ✓</span></div>
+            <div class="q-text">A rinse with water is sufficient for daily cleaning of a vegetable cutter.</div>
+            <span class="q-answer false">❌ FALSE</span>
+            <div class="q-exp">A water rinse alone does not remove <strong>bacteria, biofilm, or food residue</strong>
+                effectively. Proper cleaning with detergent and thorough drying is required.</div>
         </div>
-        <div class="q-text">A food business does not need to report to any authority before starting operations.</div>
-        <span class="q-answer false">❌ FALSE</span>
-        <div class="q-exp">Food businesses must <strong>notify the local food control authority</strong> before starting operations. This notification is required under Finnish food legislation to ensure proper registration and oversight.</div>
-    </div>
 
-    <div class="q-card">
-        <div class="q-head">
-            <span class="q-num">Question 40</span>
-            <span class="q-source">RUOKAVIRASTO</span>
+        <!-- ===== CATEGORY 6: OWN-CHECK / SELF-MONITORING ===== -->
+        <div class="cat-banner cat-owncheck">
+            <span>📋 Own-Check (Omavalvonta / Self-Monitoring)</span>
+            <span class="cat-count">4 questions</span>
         </div>
-        <div class="q-text">Cleaning schedules and self-monitoring records should be documented and available for inspection.</div>
-        <span class="q-answer true">✅ TRUE</span>
-        <div class="q-exp"><strong>Documentation</strong> of cleaning schedules, temperature logs, and all self-monitoring activities is legally required. These records must be available for inspection by food control authorities at any time.</div>
-    </div>
 
-    <!-- Footer -->
-    <div class="footer">
-        <p><strong>Source:</strong> Finnish Food Authority (Ruokavirasto) — <a href="https://www.ruokavirasto.fi/en/foodstuffs/hygiene-passport/hygiene-passport-test/electronic-model-test/" target="_blank">Official Model Test</a></p>
-        <p style="margin-top:8px">These questions are from the official Ruokavirasto model exam (mallikoe) published March 2025.</p>
-        <p style="margin-top:8px">Note: The actual test uses questions from Ruokavirasto's question bank — each test session features different questions.</p>
-        <p style="margin-top:14px">💡 Print this page: <strong>Ctrl+P → Save as PDF</strong></p>
-    </div>
+        <div class="q-card">
+            <div class="q-head"><span class="q-num">Q34</span><span class="q-source">RUOKAVIRASTO ✓</span></div>
+            <div class="q-text">All food business operators must carry out own-check (self-monitoring).</div>
+            <span class="q-answer true">✅ TRUE</span>
+            <div class="q-exp">All food businesses are <strong>legally required</strong> to implement own-check
+                activities. This includes maintaining cleanliness, controlling temperatures, and ensuring the hygiene
+                skills of staff.</div>
+        </div>
 
-</div>
+        <div class="q-card">
+            <div class="q-head"><span class="q-num">Q35</span><span class="q-source">RUOKAVIRASTO ✓</span></div>
+            <div class="q-text">Monitoring the success of cooling and the temperature of stored foodstuffs is part of
+                self-monitoring.</div>
+            <span class="q-answer true">✅ TRUE</span>
+            <div class="q-exp"><strong>Temperature monitoring</strong> and recording is a critical part of every food
+                business's self-monitoring plan. Cooling times and storage temperatures must be regularly checked and
+                documented.</div>
+        </div>
+
+        <div class="q-card">
+            <div class="q-head"><span class="q-num">Q36</span><span class="q-source">RUOKAVIRASTO ✓</span></div>
+            <div class="q-text">Raw materials and products that commonly cause allergies and contain gluten should be
+                stored well-labeled and protected, e.g., in sealed packages.</div>
+            <span class="q-answer true">✅ TRUE</span>
+            <div class="q-exp">This prevents <strong>allergen contamination</strong> — for example, gluten-free flour
+                stored unprotected near regular flour. Proper labeling and sealed storage minimizes contamination risks.
+            </div>
+        </div>
+
+        <div class="q-card">
+            <div class="q-head"><span class="q-num">Q37</span><span class="q-source">RUOKAVIRASTO ✓</span></div>
+            <div class="q-text">Microbes can end up in foodstuffs via dirt and dust.</div>
+            <span class="q-answer true">✅ TRUE</span>
+            <div class="q-exp">Dirt and dust carry <strong>microbes from the environment</strong> into food preparation
+                areas. This is why maintaining clean premises and properly covering food is essential.</div>
+        </div>
+
+        <!-- ===== CATEGORY 7: LEGISLATION ===== -->
+        <div class="cat-banner cat-law">
+            <span>⚖️ Food Legislation &amp; Authorities</span>
+            <span class="cat-count">3 questions</span>
+        </div>
+
+        <div class="q-card">
+            <div class="q-head"><span class="q-num">Q38</span><span class="q-source">RUOKAVIRASTO ✓</span></div>
+            <div class="q-text">An employee who handles unpackaged perishable foods on food premises must always possess
+                a Hygiene Passport before commencing any work.</div>
+            <span class="q-answer false">❌ FALSE</span>
+            <div class="q-exp">While a Hygiene Passport is mandatory, Finnish food legislation allows a <strong>grace
+                    period of three months</strong>. An employee must obtain the Hygiene Passport at the latest three
+                months after starting work.</div>
+        </div>
+
+        <div class="q-card">
+            <div class="q-head"><span class="q-num">Q39</span><span class="q-source">RUOKAVIRASTO ✓</span></div>
+            <div class="q-text">Microbes can multiply quickly in dirty tableware and cutlery.</div>
+            <span class="q-answer true">✅ TRUE</span>
+            <div class="q-exp">Food residue on dirty tableware provides <strong>nutrients and moisture</strong> for
+                rapid microbial growth. Tableware and cutlery must be properly washed and stored hygienically.</div>
+        </div>
+
+        <div class="q-card">
+            <div class="q-head"><span class="q-num">Q40</span><span class="q-source">RUOKAVIRASTO ✓</span></div>
+            <div class="q-text">If a shipment contains dairy products, meat products or fish products, it can be safely
+                stored for a few hours at room temperature before it is transferred to a cold storage.</div>
+            <span class="q-answer false">❌ FALSE</span>
+            <div class="q-exp">Perishable products must be <strong>transferred to cold storage immediately</strong> upon
+                arrival. Even a few hours at room temperature allows dangerous bacterial growth in dairy, meat, and fish
+                products.</div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p><strong>Source:</strong> Finnish Food Authority (Ruokavirasto) — <a
+                    href="https://www.ruokavirasto.fi/en/foodstuffs/hygiene-passport/hygiene-passport-test/electronic-model-test/"
+                    target="_blank">Official Electronic Model Test</a></p>
+            <p style="margin-top:8px">All questions were verified against official Ruokavirasto model exam content
+                (mallikoe) published on ruokavirasto.fi.</p>
+            <p style="margin-top:8px">⚠️ The actual test draws from a larger question bank — each test session features
+                different questions.</p>
+            <p style="margin-top:14px">💡 Print this page: <strong>Ctrl+P → Save as PDF</strong></p>
+        </div>
+
+    </div>
 </body>
+
 </html>
