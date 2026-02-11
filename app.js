@@ -354,6 +354,14 @@ function showStudyGuide() {
     <div class="pdf-downloads">
         <h3 style="font-size:.9rem;color:var(--t2);text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;font-weight:600">📄 Printable PDF Documents</h3>
         <div class="pdf-cards">
+            <a href="official-test.html" target="_blank" class="pdf-card" style="border-color:rgba(34,197,94,0.3);background:rgba(34,197,94,0.04)">
+                <div class="pdf-icon">🎯</div>
+                <div class="pdf-info">
+                    <div class="pdf-title" style="color:#22c55e">▶ Practice Official Test (Interactive)</div>
+                    <div class="pdf-desc">Take the 40-question Ruokavirasto model test with timer, instant feedback & pass/fail scoring</div>
+                </div>
+                <div class="pdf-action" style="color:#22c55e">Start →</div>
+            </a>
             <a href="official-ruokavirasto-questions.html" target="_blank" class="pdf-card" style="border-color:rgba(251,191,36,0.3)">
                 <div class="pdf-icon">🏛️</div>
                 <div class="pdf-info">

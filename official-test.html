@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Official Ruokavirasto Model Test — Practice</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        :root {
+            --bg: #0a0a14;
+            --card: #14142a;
+            --brd: #252540;
+            --acc: #6366f1;
+            --grn: #22c55e;
+            --red: #ef4444;
+            --gold: #fbbf24;
+            --t1: #f1f5f9;
+            --t2: #94a3b8;
+            --t3: #64748b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--t1);
+            min-height: 100vh;
+        }
+
+        /* ===== SCREENS ===== */
+        .screen {
+            display: none;
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 24px 20px;
+        }
+
+        .screen.active {
+            display: block;
+        }
+
+        /* ===== START SCREEN ===== */
+        .start-screen {
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        .start-logo {
+            font-size: 3.5rem;
+            margin-bottom: 12px;
+        }
+
+        .start-title {
+            font-size: 1.6rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .start-sub {
+            color: var(--t2);
+            font-size: .9rem;
+            margin: 8px 0 28px;
+            line-height: 1.6;
+        }
+
+        .start-info {
+            background: var(--card);
+            border: 1px solid var(--brd);
+            border-radius: 14px;
+            padding: 20px;
+            text-align: left;
+            margin-bottom: 28px;
+        }
+
+        .start-info h3 {
+            font-size: .8rem;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            font-size: .85rem;
+            border-bottom: 1px solid rgba(255, 255, 255, .04);
+        }
+
+        .info-row:last-child {
+            border: none;
+        }
+
+        .info-label {
+            color: var(--t3);
+        }
+
+        .info-value {
+            color: var(--t1);
+            font-weight: 600;
+        }
+
+        .start-btn {
+            display: inline-block;
+            padding: 16px 48px;
+            font-size: 1rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            color: #0a0a14;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: transform .15s, box-shadow .15s;
+        }
+
+        .start-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(251, 191, 36, .25);
+        }
+
+        /* ===== QUIZ SCREEN ===== */
+        .quiz-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 0;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--brd);
+        }
+
+        .quiz-progress-text {
+            font-size: .8rem;
+            color: var(--t3);
+            font-weight: 600;
+        }
+
+        .quiz-score {
+            font-size: .8rem;
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: var(--brd);
+            border-radius: 999px;
+            margin-bottom: 24px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #fbbf24, #f59e0b);
+            border-radius: 999px;
+            transition: width .4s ease;
+        }
+
+        .q-category {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 999px;
+            font-size: .7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+            margin-bottom: 16px;
+            background: rgba(99, 102, 241, .1);
+            border: 1px solid rgba(99, 102, 241, .25);
+            color: #a5b4fc;
+        }
+
+        .q-statement {
+            font-size: 1.15rem;
+            font-weight: 700;
+            line-height: 1.55;
+            margin-bottom: 32px;
+            min-height: 80px;
+        }
+
+        .btn-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-bottom: 20px;
+        }
+
+        .answer-btn {
+            padding: 18px 24px;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 14px;
+            border: 2px solid var(--brd);
+            background: var(--card);
+            color: var(--t1);
+            cursor: pointer;
+            transition: all .2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .answer-btn:hover:not(:disabled) {
+            border-color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        .answer-btn:disabled {
+            cursor: default;
+            opacity: .7;
+        }
+
+        .answer-btn.correct {
+            border-color: var(--grn);
+            background: rgba(34, 197, 94, .1);
+            color: var(--grn);
+        }
+
+        .answer-btn.wrong {
+            border-color: var(--red);
+            background: rgba(239, 68, 68, .1);
+            color: var(--red);
+        }
+
+        .answer-btn.was-correct {
+            border-color: var(--grn);
+            background: rgba(34, 197, 94, .06);
+        }
+
+        .feedback-box {
+            padding: 18px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            display: none;
+            font-size: .88rem;
+            line-height: 1.6;
+            color: var(--t2);
+        }
+
+        .feedback-box.show {
+            display: block;
+            animation: fadeIn .3s ease;
+        }
+
+        .feedback-box.correct-fb {
+            background: rgba(34, 197, 94, .06);
+            border: 1px solid rgba(34, 197, 94, .2);
+        }
+
+        .feedback-box.wrong-fb {
+            background: rgba(239, 68, 68, .06);
+            border: 1px solid rgba(239, 68, 68, .2);
+        }
+
+        .feedback-box .fb-title {
+            font-weight: 700;
+            font-size: .9rem;
+            margin-bottom: 6px;
+        }
+
+        .feedback-box.correct-fb .fb-title {
+            color: var(--grn);
+        }
+
+        .feedback-box.wrong-fb .fb-title {
+            color: var(--red);
+        }
+
+        .feedback-box strong {
+            color: var(--gold);
+        }
+
+        .next-btn {
+            width: 100%;
+            padding: 14px;
+            font-size: .95rem;
+            font-weight: 700;
+            background: var(--card);
+            border: 2px solid var(--brd);
+            color: var(--t1);
+            border-radius: 12px;
+            cursor: pointer;
+            display: none;
+            transition: all .2s;
+        }
+
+        .next-btn.show {
+            display: block;
+            animation: fadeIn .3s ease;
+        }
+
+        .next-btn:hover {
+            border-color: var(--gold);
+            background: rgba(251, 191, 36, .06);
+        }
+
+        /* ===== RESULT SCREEN ===== */
+        .result-screen {
+            text-align: center;
+            padding-top: 60px;
+        }
+
+        .result-emoji {
+            font-size: 4rem;
+            margin-bottom: 16px;
+        }
+
+        .result-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .result-sub {
+            color: var(--t2);
+            font-size: .95rem;
+            margin-bottom: 32px;
+        }
+
+        .result-score-ring {
+            width: 160px;
+            height: 160px;
+            margin: 0 auto 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .result-score-ring .ring-num {
+            font-size: 2.4rem;
+            font-weight: 800;
+        }
+
+        .result-score-ring .ring-label {
+            font-size: .75rem;
+            color: var(--t3);
+        }
+
+        .result-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 28px;
+        }
+
+        .stat-card {
+            background: var(--card);
+            border: 1px solid var(--brd);
+            border-radius: 12px;
+            padding: 16px 10px;
+            text-align: center;
+        }
+
+        .stat-num {
+            font-size: 1.3rem;
+            font-weight: 800;
+        }
+
+        .stat-label {
+            font-size: .7rem;
+            color: var(--t3);
+            text-transform: uppercase;
+            letter-spacing: .5px;
+            margin-top: 4px;
+        }
+
+        .stat-correct .stat-num {
+            color: var(--grn);
+        }
+
+        .stat-wrong .stat-num {
+            color: var(--red);
+        }
+
+        .stat-pct .stat-num {
+            color: var(--gold);
+        }
+
+        .result-badge {
+            display: inline-block;
+            padding: 10px 24px;
+            border-radius: 999px;
+            font-size: .85rem;
+            font-weight: 700;
+            margin-bottom: 28px;
+        }
+
+        .badge-pass {
+            background: rgba(34, 197, 94, .1);
+            border: 1px solid rgba(34, 197, 94, .3);
+            color: var(--grn);
+        }
+
+        .badge-fail {
+            background: rgba(239, 68, 68, .1);
+            border: 1px solid rgba(239, 68, 68, .3);
+            color: var(--red);
+        }
+
+        .review-section {
+            text-align: left;
+            margin-top: 32px;
+        }
+
+        .review-title {
+            font-size: .85rem;
+            color: var(--t3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .review-card {
+            background: var(--card);
+            border: 1px solid var(--brd);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 10px;
+        }
+
+        .review-card.review-wrong {
+            border-left: 3px solid var(--red);
+        }
+
+        .review-card.review-right {
+            border-left: 3px solid var(--grn);
+        }
+
+        .review-q {
+            font-size: .88rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .review-ans {
+            font-size: .78rem;
+        }
+
+        .review-exp {
+            font-size: .78rem;
+            color: var(--t3);
+            margin-top: 6px;
+            line-height: 1.5;
+        }
+
+        .review-exp strong {
+            color: var(--gold);
+        }
+
+        .restart-btn {
+            display: inline-block;
+            padding: 14px 40px;
+            font-size: .95rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            color: #0a0a14;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            margin-top: 28px;
+            transition: transform .15s;
+        }
+
+        .restart-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .timer {
+            font-size: .8rem;
+            color: var(--t3);
+            font-weight: 600;
+            font-variant-numeric: tabular-nums;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== START SCREEN ===== -->
+    <div class="screen active" id="startScreen">
+        <div class="start-screen">
+            <div class="start-logo">🏛️</div>
+            <div class="start-title">Official Ruokavirasto Model Test</div>
+            <div class="start-sub">Practice with 40 confirmed questions from the Finnish Food Authority's official model
+                exam</div>
+            <div class="start-info">
+                <h3>📋 Test Info</h3>
+                <div class="info-row"><span class="info-label">Questions</span><span class="info-value">40
+                        True/False</span></div>
+                <div class="info-row"><span class="info-label">Pass Score</span><span class="info-value">34/40
+                        (85%)</span></div>
+                <div class="info-row"><span class="info-label">Time Limit</span><span class="info-value">45
+                        minutes</span></div>
+                <div class="info-row"><span class="info-label">Source</span><span class="info-value">ruokavirasto.fi
+                        ✓</span></div>
+                <div class="info-row"><span class="info-label">Categories</span><span class="info-value">7 topics</span>
+                </div>
+            </div>
+            <button class="start-btn" onclick="startTest()">Start Practice Test →</button>
+        </div>
+    </div>
+
+    <!-- ===== QUIZ SCREEN ===== -->
+    <div class="screen" id="quizScreen">
+        <div class="quiz-header">
+            <span class="quiz-progress-text" id="progressText">Q1 / 40</span>
+            <span class="timer" id="timer">45:00</span>
+            <span class="quiz-score" id="scoreText">Score: 0</span>
+        </div>
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <div class="q-category" id="qCategory">Microbiology</div>
+        <div class="q-statement" id="qStatement">Loading...</div>
+        <div class="btn-group">
+            <button class="answer-btn" id="btnTrue" onclick="answer(true)">✅ TRUE</button>
+            <button class="answer-btn" id="btnFalse" onclick="answer(false)">❌ FALSE</button>
+        </div>
+        <div class="feedback-box" id="feedback">
+            <div class="fb-title" id="fbTitle"></div>
+            <div id="fbText"></div>
+        </div>
+        <button class="next-btn" id="nextBtn" onclick="nextQuestion()">Next Question →</button>
+    </div>
+
+    <!-- ===== RESULT SCREEN ===== -->
+    <div class="screen" id="resultScreen">
+        <div class="result-screen">
+            <div class="result-emoji" id="resultEmoji">🎉</div>
+            <div class="result-title" id="resultTitle">Great Job!</div>
+            <div class="result-sub" id="resultSub">Here are your results</div>
+            <div class="result-badge" id="resultBadge">PASSED</div>
+            <div class="result-stats">
+                <div class="stat-card stat-correct">
+                    <div class="stat-num" id="statCorrect">0</div>
+                    <div class="stat-label">Correct</div>
+                </div>
+                <div class="stat-card stat-wrong">
+                    <div class="stat-num" id="statWrong">0</div>
+                    <div class="stat-label">Wrong</div>
+                </div>
+                <div class="stat-card stat-pct">
+                    <div class="stat-num" id="statPct">0%</div>
+                    <div class="stat-label">Score</div>
+                </div>
+            </div>
+            <div class="review-section" id="reviewSection"></div>
+            <button class="restart-btn" onclick="restartTest()">🔄 Try Again</button>
+        </div>
+    </div>
+
+    <script>
+        const QUESTIONS = [
+            // ===== MICROBIOLOGY (8) =====
+            { q: "Vacuum-packaged foodstuffs might contain microbes that cause food poisoning.", a: true, cat: "Microbiology", exp: "Some harmful microbes such as <strong>Listeria monocytogenes</strong> and <strong>Clostridium botulinum</strong> can reproduce without oxygen. Food may also have been contaminated before packaging." },
+            { q: "Temperature does not affect the reproduction of microbes.", a: false, cat: "Microbiology", exp: "Temperature is a <strong>significant factor</strong> affecting microbial reproduction. Microbes reproduce more effectively when the temperature is favorable." },
+            { q: "Microbes grow well in cooked rice at room temperature.", a: true, cat: "Microbiology", exp: "Cooked rice has <strong>high water activity</strong>. Bacillus cereus can form spores that survive cooking and multiply rapidly at room temperature." },
+            { q: "A preservative destroys all microbes in a foodstuff.", a: false, cat: "Microbiology", exp: "Preservatives often work by <strong>binding water molecules</strong>, reducing water activity and hindering growth, but don't destroy all microbes." },
+            { q: "Some dairy products are made by using useful microbes.", a: true, cat: "Microbiology", exp: "<strong>Lactic acid bacteria, yeasts, and molds</strong> are used to produce yoghurt, cheese, bread, and mold cheeses." },
+            { q: "If raw milk is stored at refrigerator temperature, it cannot contain pathogenic bacteria.", a: false, cat: "Microbiology", exp: "Contamination during milking can introduce microbes. <strong>Pasteurization</strong> is needed to ensure milk safety — refrigeration alone is not sufficient." },
+            { q: "Bacteria that spoil foodstuffs can multiply rapidly if the temperature is between +6 and +60 degrees Celsius.", a: true, cat: "Microbiology", exp: "This range is the <strong>\"danger zone\"</strong> where many microbes thrive. Unnecessary storage or processing in this range should be avoided." },
+            { q: "All microbial toxins are destroyed when food is heated to over +60 degrees Celsius.", a: false, cat: "Microbiology", exp: "Many microbial toxins are <strong>heat-resistant</strong>. For example, the toxin from Staphylococcus aureus is not destroyed by normal cooking temperatures." },
+
+            // ===== FOOD POISONING (7) =====
+            { q: "Food poisoning always requires a large number of harmful bacteria.", a: false, cat: "Food Poisoning", exp: "Some food poisonings can be caused by <strong>very small amounts</strong> of bacteria or viruses, such as norovirus and EHEC." },
+            { q: "Deep-frozen berries might contain microbes that cause food poisoning.", a: true, cat: "Food Poisoning", exp: "Deep freezing only <strong>kills a few microbes</strong> and can keep viruses alive. Heat frozen berries at <strong>+90°C for at least 5 minutes</strong>." },
+            { q: "Food prepared by heating, but refrigerated too slowly, can cause food poisoning.", a: true, cat: "Food Poisoning", exp: "Bacteria like <strong>B. cereus</strong> can reproduce if food cools too slowly. Cool to <strong>+6°C or lower within four hours</strong>." },
+            { q: "It is not possible to get food poisoning from ice cubes.", a: false, cat: "Food Poisoning", exp: "Freezing <strong>does not kill all microbes</strong>. If contaminated water was used, the microbes survive in ice." },
+            { q: "A foodstuff may not be sold after its 'use by' date.", a: true, cat: "Food Poisoning", exp: "The <strong>'use by' date</strong> is for highly perishable products. Such food cannot be sold or used after this date." },
+            { q: "Steak tartare, i.e., a raw meat patty, can give you food poisoning.", a: true, cat: "Food Poisoning", exp: "<strong>EHEC bacteria</strong> can infect through eating contaminated raw meat. Microbes are mixed into the meat during grinding." },
+            { q: "Berries may collect viruses if the irrigation water is contaminated by, e.g., feces.", a: true, cat: "Food Poisoning", exp: "<strong>Norovirus and Hepatitis A virus</strong> can infect via food and water. Contaminated irrigation water can transfer viruses to berries." },
+
+            // ===== HYGIENIC WORK METHODS (8) =====
+            { q: "The risk of food poisoning increases if an employee handles raw meat and vegetables using the same utensils or work surfaces when preparing food.", a: true, cat: "Work Methods", exp: "This leads to <strong>cross-contamination</strong>, where harmful bacteria from raw foods transfer to ready-to-eat foods." },
+            { q: "To avoid cross-contamination, food of animal origin (raw meat, poultry, fish) must be kept apart from food intended to be eaten without further heating (salads, cold cuts).", a: true, cat: "Work Methods", exp: "Raw and ready-to-eat food must not be handled with the <strong>same working tools</strong>. Proper hand hygiene between handling is essential." },
+            { q: "Salmonella can spread, for example, from utensils used for processing raw poultry meat.", a: true, cat: "Work Methods", exp: "Contamination via direct contact, tools, surfaces, or poor hand hygiene is called <strong>cross-contamination</strong> — a common cause of food poisoning." },
+            { q: "Unpackaged smoked fish and fresh fish must not touch each other in the sales counter.", a: true, cat: "Work Methods", exp: "Smoked fish is often consumed <strong>without further heating</strong>, so microbes from cross-contamination would not be killed." },
+            { q: "Packaging materials of foodstuffs may not be stored directly on the floor; instead, they must be stored on clean platforms.", a: true, cat: "Work Methods", exp: "<strong>Clean, elevated surfaces</strong> prevent contamination from floor-level dirt, pests, and moisture." },
+            { q: "Pets are allowed in the kitchen of a food premises.", a: false, cat: "Work Methods", exp: "Pets are <strong>strictly prohibited</strong> in food preparation areas. Animals carry bacteria, parasites, and allergens." },
+            { q: "Deep frozen fish must be thawed in a refrigerated area.", a: true, cat: "Work Methods", exp: "Thawing should occur in a <strong>refrigerator</strong> to prevent the surface temperature from rising too high while the center is still frozen." },
+            { q: "If a foodstuff (such as liver casserole) has been taken out of a freezer to thaw, its shelf-life is longer than that of a similar foodstuff that has not been deep frozen.", a: false, cat: "Work Methods", exp: "Thawed food can <strong>spoil faster</strong>. Freezing creates ice crystals that break down the food's structure. Shelf life is <strong>shorter</strong>." },
+
+            // ===== PERSONAL HYGIENE (5) =====
+            { q: "An employee must wash his/her hands if he/she has first handled raw foodstuffs such as raw fish, and then starts to handle cooked foodstuffs such as cooked broiler.", a: true, cat: "Personal Hygiene", exp: "Crucial to prevent <strong>cross-contamination</strong> from raw to cooked foods." },
+            { q: "Good hand hygiene prevents food poisonings.", a: true, cat: "Personal Hygiene", exp: "Hand hygiene is <strong>one of the most important</strong> practices for preventing spread of food poisoning microbes." },
+            { q: "Wounds on human skin can transfer food poisoning bacteria into foodstuffs.", a: true, cat: "Personal Hygiene", exp: "Wounds can contain <strong>Staphylococcus aureus</strong>. They must be covered with waterproof, brightly colored bandages, plus gloves." },
+            { q: "An employee can spread contagious diseases, such as norovirus, through foodstuffs even without exhibiting symptoms.", a: true, cat: "Personal Hygiene", exp: "<strong>Asymptomatic carriers</strong> can spread norovirus. After illness, stay away from work for <strong>at least two days</strong> after symptoms cease." },
+            { q: "If an employee uses disposable gloves, the gloves must always be replaced after touching dirty surfaces or handling money.", a: true, cat: "Personal Hygiene", exp: "Gloves should be <strong>changed after touching any contamination source</strong> to prevent cross-contamination." },
+
+            // ===== CLEANING & SANITATION (5) =====
+            { q: "Cleaning the working surfaces immediately after work reduces hygienic risks.", a: true, cat: "Cleaning", exp: "Immediate cleaning prevents <strong>buildup of bacteria and pathogens</strong>, reducing cross-contamination risks." },
+            { q: "Washing and mechanical cleaning of the work surfaces can be replaced by using only a disinfectant.", a: false, cat: "Cleaning", exp: "Disinfectant <strong>cannot replace</strong> proper washing and mechanical cleaning. Physical cleaning must be done first." },
+            { q: "Cleaning and sanitation equipment may be stored unprotected in the toilet next to the toilet bowl.", a: false, cat: "Cleaning", exp: "Toilet areas spread bacteria. Equipment must be <strong>stored hygienically</strong> in a designated area." },
+            { q: "Cleaning and sanitation equipment must be cleaned after use and maintained and stored hygienically.", a: true, cat: "Cleaning", exp: "Dirty cleaning equipment can <strong>spread contamination</strong> rather than prevent it." },
+            { q: "A rinse with water is sufficient for daily cleaning of a vegetable cutter.", a: false, cat: "Cleaning", exp: "Water alone does not remove <strong>bacteria, biofilm, or food residue</strong>. Proper cleaning with detergent is required." },
+
+            // ===== OWN-CHECK (4) =====
+            { q: "All food business operators must carry out own-check (self-monitoring).", a: true, cat: "Own-Check", exp: "All food businesses are <strong>legally required</strong> to implement own-check activities based on HACCP principles." },
+            { q: "Monitoring the success of cooling and the temperature of stored foodstuffs is part of self-monitoring.", a: true, cat: "Own-Check", exp: "<strong>Temperature monitoring</strong> is a critical part of every food business's self-monitoring plan." },
+            { q: "Raw materials and products that commonly cause allergies and contain gluten should be stored well-labeled and protected, e.g., in sealed packages.", a: true, cat: "Own-Check", exp: "Prevents <strong>allergen contamination</strong> — e.g., gluten-free flour stored near regular flour. Proper labeling minimizes risk." },
+            { q: "Microbes can end up in foodstuffs via dirt and dust.", a: true, cat: "Own-Check", exp: "Dirt and dust carry <strong>microbes from the environment</strong>. Clean premises and properly covered food are essential." },
+
+            // ===== LEGISLATION (3) =====
+            { q: "An employee who handles unpackaged perishable foods on food premises must always possess a Hygiene Passport before commencing any work.", a: false, cat: "Legislation", exp: "Finnish law allows a <strong>grace period of three months</strong>. The passport must be obtained at latest three months after starting work." },
+            { q: "Microbes can multiply quickly in dirty tableware and cutlery.", a: true, cat: "Legislation", exp: "Food residue provides <strong>nutrients and moisture</strong> for rapid microbial growth. Proper washing and storage is required." },
+            { q: "If a shipment contains dairy products, meat products or fish products, it can be safely stored for a few hours at room temperature before it is transferred to a cold storage.", a: false, cat: "Legislation", exp: "Perishable products must be <strong>transferred to cold storage immediately</strong>. Room temperature allows dangerous bacterial growth." },
+        ];
+
+        // Shuffle questions
+        function shuffle(arr) {
+            const a = [...arr];
+            for (let i = a.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [a[i], a[j]] = [a[j], a[i]];
+            }
+            return a;
+        }
+
+        let questions = [], current = 0, score = 0, answers = [], timerInterval, timeLeft;
+
+        const CAT_COLORS = {
+            "Microbiology": { bg: "rgba(99,102,241,.1)", border: "rgba(99,102,241,.25)", color: "#a5b4fc" },
+            "Food Poisoning": { bg: "rgba(239,68,68,.1)", border: "rgba(239,68,68,.25)", color: "#fca5a5" },
+            "Work Methods": { bg: "rgba(34,197,94,.1)", border: "rgba(34,197,94,.25)", color: "#86efac" },
+            "Personal Hygiene": { bg: "rgba(168,85,247,.1)", border: "rgba(168,85,247,.25)", color: "#c4b5fd" },
+            "Cleaning": { bg: "rgba(6,182,212,.1)", border: "rgba(6,182,212,.25)", color: "#67e8f9" },
+            "Own-Check": { bg: "rgba(245,158,11,.1)", border: "rgba(245,158,11,.25)", color: "#fcd34d" },
+            "Legislation": { bg: "rgba(236,72,153,.1)", border: "rgba(236,72,153,.25)", color: "#f9a8d4" },
+        };
+
+        function showScreen(id) {
+            document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+        }
+
+        function startTest() {
+            questions = shuffle(QUESTIONS);
+            current = 0; score = 0; answers = [];
+            timeLeft = 45 * 60;
+            showScreen('quizScreen');
+            showQuestion();
+            startTimer();
+        }
+
+        function startTimer() {
+            clearInterval(timerInterval);
+            updateTimerDisplay();
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                updateTimerDisplay();
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    finishTest();
+                }
+            }, 1000);
+        }
+
+        function updateTimerDisplay() {
+            const m = Math.floor(timeLeft / 60);
+            const s = timeLeft % 60;
+            const el = document.getElementById('timer');
+            el.textContent = `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+            if (timeLeft < 300) el.style.color = '#ef4444';
+            else if (timeLeft < 600) el.style.color = '#f59e0b';
+            else el.style.color = 'var(--t3)';
+        }
+
+        function showQuestion() {
+            const q = questions[current];
+            document.getElementById('progressText').textContent = `Q${current + 1} / ${questions.length}`;
+            document.getElementById('scoreText').textContent = `Score: ${score}`;
+            document.getElementById('progressFill').style.width = `${((current) / questions.length) * 100}%`;
+
+            const catEl = document.getElementById('qCategory');
+            const cc = CAT_COLORS[q.cat] || CAT_COLORS["Microbiology"];
+            catEl.textContent = q.cat;
+            catEl.style.background = cc.bg;
+            catEl.style.borderColor = cc.border;
+            catEl.style.color = cc.color;
+
+            document.getElementById('qStatement').textContent = q.q;
+
+            document.getElementById('btnTrue').disabled = false;
+            document.getElementById('btnFalse').disabled = false;
+            document.getElementById('btnTrue').className = 'answer-btn';
+            document.getElementById('btnFalse').className = 'answer-btn';
+            document.getElementById('feedback').className = 'feedback-box';
+            document.getElementById('nextBtn').className = 'next-btn';
+        }
+
+        function answer(userAnswer) {
+            const q = questions[current];
+            const correct = userAnswer === q.a;
+            if (correct) score++;
+
+            answers.push({ question: q, userAnswer, correct });
+
+            const btnT = document.getElementById('btnTrue');
+            const btnF = document.getElementById('btnFalse');
+            btnT.disabled = true;
+            btnF.disabled = true;
+
+            if (q.a === true) {
+                btnT.classList.add('correct');
+                if (!correct) btnF.classList.add('wrong');
+            } else {
+                btnF.classList.add('correct');
+                if (!correct) btnT.classList.add('wrong');
+            }
+
+            const fb = document.getElementById('feedback');
+            const fbTitle = document.getElementById('fbTitle');
+            const fbText = document.getElementById('fbText');
+
+            if (correct) {
+                fb.className = 'feedback-box correct-fb show';
+                fbTitle.textContent = '✅ Correct!';
+            } else {
+                fb.className = 'feedback-box wrong-fb show';
+                fbTitle.textContent = `❌ Incorrect — The answer is ${q.a ? 'TRUE' : 'FALSE'}`;
+            }
+            fbText.innerHTML = q.exp;
+
+            document.getElementById('scoreText').textContent = `Score: ${score}`;
+            document.getElementById('nextBtn').className = 'next-btn show';
+            document.getElementById('nextBtn').textContent = current < questions.length - 1 ? 'Next Question →' : 'See Results →';
+        }
+
+        function nextQuestion() {
+            current++;
+            if (current >= questions.length) {
+                finishTest();
+            } else {
+                showQuestion();
+            }
+        }
+
+        function finishTest() {
+            clearInterval(timerInterval);
+            const pct = Math.round((score / questions.length) * 100);
+            const passed = score >= 34;
+
+            document.getElementById('resultEmoji').textContent = passed ? '🎉' : '😤';
+            document.getElementById('resultTitle').textContent = passed ? 'Congratulations! You Passed!' : 'Not Quite — Keep Studying!';
+            document.getElementById('resultSub').textContent = passed
+                ? `You scored ${score}/40 — you would pass the official exam!`
+                : `You scored ${score}/40 — you need at least 34 to pass. Review the questions below.`;
+
+            const badge = document.getElementById('resultBadge');
+            badge.textContent = passed ? '✅ PASSED' : '❌ FAILED';
+            badge.className = `result-badge ${passed ? 'badge-pass' : 'badge-fail'}`;
+
+            document.getElementById('statCorrect').textContent = score;
+            document.getElementById('statWrong').textContent = questions.length - score;
+            document.getElementById('statPct').textContent = pct + '%';
+
+            // Review section — show wrong answers first
+            const reviewEl = document.getElementById('reviewSection');
+            const wrongAnswers = answers.filter(a => !a.correct);
+            const correctAnswers = answers.filter(a => a.correct);
+
+            let html = '';
+            if (wrongAnswers.length > 0) {
+                html += `<div class="review-title">❌ Questions You Got Wrong (${wrongAnswers.length})</div>`;
+                wrongAnswers.forEach(a => {
+                    html += `<div class="review-card review-wrong">
+                <div class="review-q">${a.question.q}</div>
+                <div class="review-ans" style="color:var(--grn)">Correct answer: <strong>${a.question.a ? 'TRUE' : 'FALSE'}</strong></div>
+                <div class="review-exp">${a.question.exp}</div>
+            </div>`;
+                });
+            }
+            html += `<div class="review-title" style="margin-top:24px">✅ Questions You Got Right (${correctAnswers.length})</div>`;
+            correctAnswers.forEach(a => {
+                html += `<div class="review-card review-right">
+            <div class="review-q">${a.question.q}</div>
+            <div class="review-ans" style="color:var(--grn)">✅ ${a.question.a ? 'TRUE' : 'FALSE'}</div>
+        </div>`;
+            });
+            reviewEl.innerHTML = html;
+
+            showScreen('resultScreen');
+        }
+
+        function restartTest() {
+            showScreen('startScreen');
+        }
+    </script>
+
+</body>
+
+</html>
