@@ -354,6 +354,14 @@ function showStudyGuide() {
     <div class="pdf-downloads">
         <h3 style="font-size:.9rem;color:var(--t2);text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;font-weight:600">📄 Printable PDF Documents</h3>
         <div class="pdf-cards">
+            <a href="official-ruokavirasto-questions.html" target="_blank" class="pdf-card" style="border-color:rgba(251,191,36,0.3)">
+                <div class="pdf-icon">🏛️</div>
+                <div class="pdf-info">
+                    <div class="pdf-title" style="color:#fbbf24">Official Ruokavirasto Model Test</div>
+                    <div class="pdf-desc">40 confirmed questions from the Finnish Food Authority's official model exam (2025) with official justifications</div>
+                </div>
+                <div class="pdf-action" style="color:#fbbf24">Open →</div>
+            </a>
             <a href="study-guide.html" target="_blank" class="pdf-card">
                 <div class="pdf-icon">📋</div>
                 <div class="pdf-info">
